@@ -5,6 +5,9 @@ const SC = require('./controller/save_controller');
 const axios = require('axios');
 const fs = require('fs')
 require('dotenv').config();
+var bcrypt = require('bcrypt');
+const saltRounds = 10;
+
 
 const app = express();
 app.use(bodyParser.json());
@@ -13,6 +16,17 @@ massive(process.env.CONNECTION_STRING).then((database) => {
     app.set('db', database);
     console.log('connected')
 })
+
+app.use( express.static( `${__dirname}/../build` ) );
+
+//bcrypt 
+// app.use(bodyParser.json());
+// app.use(session({
+//   secret: "mega hyper ultra secret",
+//   saveUninitialized: false,
+//   resave: false,
+// }));
+// app.use(express.static(`${__dirname}/../build`));
 
 
 // axios.get('https://store.nike.com/html-services/gridwallData?country=US&lang_locale=en_US&gridwallPath=mens-shoes/7puZoi3&pn=1').then(response => {
@@ -25,6 +39,12 @@ massive(process.env.CONNECTION_STRING).then((database) => {
 // })
 
 //app.get('/api/nikes', SC.getAllItems);
+
+
+const path = require('path')
+app.get('*', (req, res)=>{
+  res.sendFile(path.join(__dirname, '../build/index.html'));
+})
 
 
 const PORT = 4000

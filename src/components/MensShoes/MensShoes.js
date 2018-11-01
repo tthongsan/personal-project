@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './MensShoes.css';
 import MensNikeShoes from '../../jsonFile/nikeMensLifeShoes.json';
 import ReactModal from 'react-modal';
+import Categories from '../Categories/Categories';
 import Product from '../Product/Product';
 import {Route, Link} from 'react-router-dom';
 
@@ -55,7 +56,7 @@ componentDidMount() {
         return (<div className="eachShoe" key={shoe.title}>
             <h4>{shoe.title}</h4>
             <h4>{shoe.localPrice}</h4>
-            <Link to={{pathname: `/product/${shoe.title}`,  shoe:{shoe: shoe}}}><img className="shoeimg" src={shoe.spriteSheet} alt=""/></Link>
+            <Link to={`/product/${shoe.title}`}><img className="shoeimg" src={shoe.spriteSheet} alt=""/></Link>
             <button onClick={this.handleOpenModal}>Quick View</button>
             <button
                 className="snipcart-add-item"
@@ -71,7 +72,7 @@ componentDidMount() {
       })
     
     return (
-        <div>
+        <div className="mensShoespage">
             <div className="displayShoes">
               {mappednike}
             </div>

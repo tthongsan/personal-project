@@ -1,0 +1,14 @@
+.categories {
+    background-color: blueviolet;
+    height: 500px;
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+}
+
+.brand-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}

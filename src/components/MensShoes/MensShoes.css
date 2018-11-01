@@ -1,3 +1,8 @@
+.mensShoespage {
+    display: flex;
+}
+
+
 .displayShoes {
     width: 1100px;
     display: flex;

@@ -10,5 +10,5 @@ export default
 <Switch>
     <Route exact path="/" component={Landing} />
     <Route path="/mens" component={Mens} />
-    <Route path={`/product/:id`} component={Product}/>
+    <Route path={`/product/:title`} component={Product}/>
 </Switch>
