@@ -1,0 +1,26 @@
+.displayShoes {
+    width: 1100px;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    justify-content: center;
+}
+
+
+.eachShoe {
+    width: 450px;
+    display: flex;
+    flex-direction: column;
+}
+
+.shoeimg {
+    width: 400px;
+}
+
+.modal {
+    background-color: aqua;
+    height: 500px;
+    width: 500px;
+    margin: 0 auto;
+    margin-top: 50px;
+}
