@@ -1,14 +1,16 @@
 .categories {
-    background-color: blueviolet;
-    height: 500px;
+    background-color: rgba(155, 28, 60, 0.466);
+    height: 350px;
     width: 200px;
     display: flex;
     flex-direction: column;
+    border-radius: 10px;
+    text-transform: uppercase;
 }
 
 .brand-list {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    justify-content: space-around;
+    height: 200px;
 }

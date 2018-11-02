@@ -1,10 +1,11 @@
 import React from 'react';
 import MensShoes from '../MensShoes/MensShoes';
+import MensTopBanner from '../MensTopBanner/MensTopBanner';
 
 const Mens = () => {
   return (
     <div>
-      mens
+    <MensTopBanner/>
       <MensShoes/>
     </div>
   )

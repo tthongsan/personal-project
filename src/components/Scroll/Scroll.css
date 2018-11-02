@@ -1,0 +1,10 @@
+.scroller {
+    overflow: scroll;
+    border: 1px solid rgba(255, 253, 253, 0.452);
+    height: 800px;
+    width: 1200px;
+    border-radius: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}

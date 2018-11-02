@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Navbar from './components/Navbar/Navbar';
+import Footer from './components/Footer/Footer';
 //import Mens from './components/Mens/Mens';
 
 import routes from './routes';
@@ -13,6 +14,7 @@ class App extends Component {
      
         <Navbar />
         {routes}
+        <Footer />
       </div>
     );
   }

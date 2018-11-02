@@ -1,7 +1,10 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const massive = require('massive');
+const session = require('express-session');
 const SC = require('./controller/save_controller');
+const UC = require('./controller/userController');
+const AC = require('./controller/authController');
 const axios = require('axios');
 const fs = require('fs')
 require('dotenv').config();
@@ -12,10 +15,24 @@ const saltRounds = 10;
 const app = express();
 app.use(bodyParser.json());
 
+app.use(session({
+    secret: process.env.SESSION_SECRET,
+    resave: false,
+    saveUninitialized: false
+}))
+
 massive(process.env.CONNECTION_STRING).then((database) => {
     app.set('db', database);
     console.log('connected')
 })
+
+
+
+////////////////////AUTH0/////////////////////////////////
+app.get('/api/me', UC.getUserData);
+app.post('/api/logout', AC.logout);
+app.get('/auth/callback', AC.handleCallback);
+
 
 app.use( express.static( `${__dirname}/../build` ) );
 
