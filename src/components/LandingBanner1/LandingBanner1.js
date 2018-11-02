@@ -10,7 +10,7 @@ const LandingBanner1 = () => {
             hello
           </div>
         </div>
-      <video clasName="theVideo" src={video} autoplay='' loop type="video"></video>
+      <video className="theVideo" src={video} autoPlay='' loop type="video"></video>
     </div>
   )
 }

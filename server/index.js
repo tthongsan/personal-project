@@ -36,6 +36,10 @@ app.get('/auth/callback', AC.handleCallback);
 
 app.use( express.static( `${__dirname}/../build` ) );
 
+
+/////////////////////PRODUCTS////////////////////////
+app.get('/api/product/:brand', SC.getNike);
+
 //bcrypt 
 // app.use(bodyParser.json());
 // app.use(session({

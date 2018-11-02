@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './Navbar.css';
 import {NavLink, Link} from 'react-router-dom';
+import {connect} from 'react-redux';
 
 class Navbar extends Component {
   constructor(){
@@ -27,6 +28,7 @@ class Navbar extends Component {
 
   render(){
   return (
+    
     <div className="navbar-container">
       <div className="navbar">
         <div>
@@ -46,5 +48,10 @@ class Navbar extends Component {
 }
 }
 
+function mapStateToProps (state) {
+  const {user} = state;
+  return {user};
+}
 
-export default Navbar;
+
+export default connect(mapStateToProps)(Navbar);

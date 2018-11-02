@@ -1,0 +1,1 @@
+insert into cart (user_id, products_id);

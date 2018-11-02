@@ -1,12 +1,13 @@
 import React from 'react';
-import MensShoes from '../MensShoes/MensShoes';
+//import MensNike from '../MensNike/MensNike';
 import MensTopBanner from '../MensTopBanner/MensTopBanner';
+import {Link} from 'react-router-dom';
 
 const Mens = () => {
   return (
     <div>
     <MensTopBanner/>
-      <MensShoes/>
+    <Link to="/nike">nike</Link>
     </div>
   )
 }
