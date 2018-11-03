@@ -38,7 +38,13 @@ app.use( express.static( `${__dirname}/../build` ) );
 
 
 /////////////////////PRODUCTS////////////////////////
-app.get('/api/product/:brand', SC.getNike);
+app.get('/api/product/:brand', SC.getShoes);
+
+
+
+//////////////////ADMIN POWERS///////////////////
+app.get('/api/product', SC.getEverything);
+app.post('/api/product', SC.addToInventory);
 
 //bcrypt 
 // app.use(bodyParser.json());

@@ -11,7 +11,7 @@ function Categories() {
         <h3>Converse</h3>
         <Link to="/nike"><h3>Nike</h3></Link>
         <h3>New Balance</h3>
-        <h3>Vans</h3>
+        <Link to="/vans"><h3>Vans</h3></Link>
         <h3>Under Armour</h3>
       </div>
     </div>
