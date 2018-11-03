@@ -19,10 +19,10 @@ componentDidMount() {
     this.getEverything();
 }
 
-
+////////////////////ADD/EDITING/DELETING/ITEMS IN INVENTORY////////////////////////////////
 getEverything = () => {
     axios.get('/api/product').then(res => {
-        //console.log(res.data)
+        console.log(res.data)
         this.setState({inventory: res.data})
     })
 }
@@ -33,6 +33,15 @@ addToInventory = () => {
         this.setState({inventory: res.data})
     })
 }
+
+deleteItemsInInventory = (id) => {
+    axios.delete(`/api/product/${id}`).then(res => {
+        this.setState({inventory: res.data})
+    })
+    this.getEverything();
+}
+
+
 
 handleChange = (key, value) => {
     this.setState({
@@ -47,6 +56,7 @@ handleChange = (key, value) => {
           return <div className="inventory-list" key={item.id}>
             <p>{item.name}</p>
             $<p>{item.price}</p>
+            <button onClick={() => this.deleteItemsInInventory(item.id)}>please delete</button>
           </div>
       })
 

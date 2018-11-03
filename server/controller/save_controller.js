@@ -28,6 +28,24 @@ module.exports = {
             res.status(200).send(item)
         })
 
+    },
+
+    deleteItemsFromInventory: (req, res) => {
+        console.log(req.params)
+        const db=req.app.get('db')
+        const {id} = req.params;
+        db.delete_item_from_inventory(id).then(item => {
+            res.status(200).send(item)
+        })
+    },
+
+    editItemsInInventory: (req, res) => {
+        const db=req.app.get('db')
+        const {id} = req.params;
+        const {brand, name, price, image, details} = req.body;
+        db.edit_items_in_inventory([brand, name, price, image, details, id]).then(item => {
+            res.status(200).send(item)
+        })
     }
 
 }

@@ -45,6 +45,8 @@ app.get('/api/product/:brand', SC.getShoes);
 //////////////////ADMIN POWERS///////////////////
 app.get('/api/product', SC.getEverything);
 app.post('/api/product', SC.addToInventory);
+app.delete('/api/product/:id', SC.deleteItemsFromInventory);
+app.put('/api/product/:id', SC.editItemsInInventory);
 
 //bcrypt 
 // app.use(bodyParser.json());

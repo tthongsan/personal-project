@@ -1,0 +1,1 @@
+update products set brand = $1, name = $2, price = $3, image = $4, details = $5 where id = $6;
