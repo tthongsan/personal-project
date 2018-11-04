@@ -40,15 +40,23 @@ getVans() {
 
   render() {
     //console.log('this.state.nikeshoes', this.state.nikeShoes)
-      console.log('hit rennderrrrr')
- let mappedShoes = this.state.vans && this.state.vans.map(shoe => {
-   return <div className="eachShoe" key={shoe.id}>
-    <h1>{shoe.name}</h1>
-    <h1>{shoe.brand}</h1>
-    <p>{shoe.price}</p>
-    <Link to={{pathname: `/product/${shoe.name}`, state:{shoe}}}><img className="shoeimg" src={shoe.image} alt=""/></Link>
-   </div>
- })
+      //console.log('hit rennderrrrr')
+      let mappedShoes = this.state.vans && this.state.vans.map(shoe => {
+        return <div className="eachShoe" key={shoe.id}>
+         <div className="img-box">
+           <Link to={{pathname: `/product/${shoe.name}`, state:{shoe}}}><img className="shoeimg" src={shoe.image} alt=""/></Link>
+         </div>
+         <div className="plus-heart">
+           <div className="shoe-desc">
+             <h4>{shoe.name}</h4>
+             <h3>{shoe.brand}</h3>
+             <p>${shoe.price}</p>
+           </div>
+           <div><button className="product-btn">Add to cart</button></div>
+           <div><i className="far fa-heart icon"></i></div>
+         </div>
+        </div>
+      })
     
     return (
       

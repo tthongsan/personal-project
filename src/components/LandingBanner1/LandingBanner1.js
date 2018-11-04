@@ -7,7 +7,6 @@ const LandingBanner1 = () => {
     <div className="fullscreen-video-wrap">
         <div className="overlay">
           <div className="sign">
-            hello
           </div>
         </div>
       <video className="theVideo" src={video} autoPlay='' loop type="video"></video>

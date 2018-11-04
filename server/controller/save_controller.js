@@ -21,9 +21,9 @@ module.exports = {
     addToInventory: (req, res) => {
         console.log(req.body)
         const db=req.app.get('db')
-        let {brand, style, name, price, image, details } = req.body;
+        let {brand, style, name, price, image, details, quantity } = req.body;
         db.add_to_inventory(
-            [brand, style, name, price, image, details]
+            [brand, style, name, price, image, details, quantity]
         ).then(item => {
             res.status(200).send(item)
         })

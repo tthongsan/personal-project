@@ -1,0 +1,28 @@
+.item-detail {
+    margin: 0 auto;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    width: 900px;
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.item-desc {
+    margin-left: 10px;
+}
+
+.image-detail {
+    border: 1px solid rgb(197, 177, 63);
+    height: 300px;
+    width: 400px;
+}
+
+.item-with-desc {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    align-items: flex-end;
+}

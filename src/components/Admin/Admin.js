@@ -11,7 +11,8 @@ import './Admin.css';
              style: '',
              price: null,
              image: '',
-             details: ''
+             details: '',
+             quantity: null
          }
      }
 
@@ -28,8 +29,8 @@ getEverything = () => {
 }
 
 addToInventory = () => {
-    const {brand, style, name, price, image, details } = this.state;
-    axios.post('/api/product', {brand: brand, style: style, name: name, price:price, image:image, details:details }).then(res => {
+    const {brand, style, name, price, image, details, quantity } = this.state;
+    axios.post('/api/product', {brand: brand, style: style, name: name, price:price, image:image, details:details, quantity:quantity }).then(res => {
         this.setState({inventory: res.data})
     })
 }
@@ -40,6 +41,9 @@ deleteItemsInInventory = (id) => {
     })
     this.getEverything();
 }
+
+//////////////////////TO CART///////////////////////////////
+
 
 
 
@@ -56,6 +60,7 @@ handleChange = (key, value) => {
           return <div className="inventory-list" key={item.id}>
             <p>{item.name}</p>
             $<p>{item.price}</p>
+            <p>{item.quantity}</p>
             <button onClick={() => this.deleteItemsInInventory(item.id)}>please delete</button>
           </div>
       })
@@ -70,6 +75,7 @@ handleChange = (key, value) => {
         price<input type="number" onChange={(e) => this.handleChange('price', e.target.value)}/>
         image<input type="text" onChange={(e) => this.handleChange('image', e.target.value)}/>
         details<input type="text" onChange={(e) => this.handleChange('details', e.target.value)}/>
+        quantity<input type="text" onChange={(e) => this.handleChange('quantity', e.target.value)}/>
         <button onClick={() => this.addToInventory()}>PLEASE ADD</button>
       </div>
     )

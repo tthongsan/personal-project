@@ -7,6 +7,7 @@ import MensNike from './components/MensNike/MensNike';
 import MensAdidas from './components/MensAdidas/MensAdidas';
 import MensVans from './components/MensVans/MensVans';
 import Admin from './components/Admin/Admin';
+import CartPage from './components/CartPage/CartPage';
 //import Profile from './components/Profile/Profile';
 //import Womens from './components/'
 
@@ -20,5 +21,6 @@ export default
     <Route path={`/product/:name`} component={Product}/>
     <Route path="/vans" component={MensVans}/>
     <Route path="/admin" component={Admin} />
+    <Route path="/cart" component={CartPage} />
 </Switch>
 // <Route path="/profile" component={Profile} />

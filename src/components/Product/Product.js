@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import './Products.css';
 
 
 class Product extends Component{
@@ -10,12 +11,20 @@ class Product extends Component{
     const {shoe} = this.props.location.state;
   return (
     
-    <div>
-      anyhitng here?
-        <p>{shoe.name}</p>
-        <p>{shoe.price}</p>
-        <img src={shoe.image} alt=""/>
-        <p>{shoe.details}</p>
+    <div className="item-detail">
+      <div className="item-with-desc">
+        <img className="image-detail" src={shoe.image} alt=""/>
+        <div className="item-desc">
+          <p>{shoe.name}</p>
+          <p>${shoe.price}</p>
+          
+        </div>
+  
+      </div>
+      <div>
+      <span>Description</span>
+      <p>{shoe.details}</p>
+      </div>
     </div>
     )
   }

@@ -5,6 +5,7 @@ const session = require('express-session');
 const SC = require('./controller/save_controller');
 const UC = require('./controller/userController');
 const AC = require('./controller/authController');
+const CC = require('./controller/cartController');
 const axios = require('axios');
 const fs = require('fs')
 require('dotenv').config();
@@ -48,10 +49,18 @@ app.post('/api/product', SC.addToInventory);
 app.delete('/api/product/:id', SC.deleteItemsFromInventory);
 app.put('/api/product/:id', SC.editItemsInInventory);
 
+
+///////////////////CART///////////////////////////
+app.get('/api/cart', CC.getCartItems);
+
+
+///////////////////EMAIL////////////////////
+app.post('/api/email', UC.sendEmail);
+
 //bcrypt 
 // app.use(bodyParser.json());
 // app.use(session({
-//   secret: "mega hyper ultra secret",
+//   secret: "",
 //   saveUninitialized: false,
 //   resave: false,
 // }));
@@ -68,6 +77,8 @@ app.put('/api/product/:id', SC.editItemsInInventory);
 // })
 
 //app.get('/api/nikes', SC.getAllItems);
+
+
 
 
 const path = require('path')

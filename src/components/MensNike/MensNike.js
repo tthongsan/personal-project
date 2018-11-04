@@ -38,25 +38,45 @@ getNike() {
   })
 }
 
+
+
   render() {
     //console.log('this.state.nikeshoes', this.state.nikeShoes)
-      console.log('hit rennderrrrr')
+      //console.log('hit rennderrrrr')
  let mappedShoes = this.state.nikes && this.state.nikes.map(shoe => {
    return <div className="eachShoe" key={shoe.id}>
-    <h1>{shoe.name}</h1>
-    <h1>{shoe.brand}</h1>
-    <p>{shoe.price}</p>
-    <Link to={{pathname: `/product/${shoe.name}`, state:{shoe}}}><img className="shoeimg" src={shoe.image} alt=""/></Link>
+    <div className="img-box">
+      <Link to={{pathname: `/product/${shoe.name}`, state:{shoe}}}><img className="shoeimg" src={shoe.image} alt=""/></Link>
+    </div>
+    <div className="plus-heart">
+      <div className="shoe-desc">
+        <h4>{shoe.name}</h4>
+        <h3>{shoe.brand}</h3>
+        <p>${shoe.price}</p>
+      </div>
+      <div>
+        <button 
+            className="snipcart-add-item product-btn"
+            data-item-id={shoe.id}
+            data-item-name={shoe.name}
+            data-item-price={shoe.price}
+            data-item-image={shoe.image}
+            data-item-url="http://myapp.com/"
+            data-item-description="xxx">
+          Add to cart
+        </button>
+      </div>
+      <div><i className="far fa-heart icon"></i></div> 
+    </div>
    </div>
  })
     
     return (
       
           <div className="mensShoespage">
-          
+                
               <div className="displayShoes">
                 <Categories />
-                  
                 <Scroll>
                   {mappedShoes}
                 </Scroll>

@@ -6,8 +6,8 @@ import {Link} from 'react-router-dom';
 const Mens = () => {
   return (
     <div>
+    <h1>Mens</h1>
     <MensTopBanner/>
-    <Link to="/nike">nike</Link>
     </div>
   )
 }

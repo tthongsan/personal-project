@@ -10,11 +10,10 @@ create table products (
 
 create table cart (
     id serial primary key,
-    user_id int references users (id),
-    products_id int references products (id),
-)
-
-
+    name text,
+    price int,
+    quantity int
+);
 
 
 create table users (
