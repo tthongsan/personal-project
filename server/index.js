@@ -51,7 +51,28 @@ app.put('/api/product/:id', SC.editItemsInInventory);
 
 
 ///////////////////CART///////////////////////////
-app.get('/api/cart', CC.getCartItems);
+app.get('/api/cart', (req, res) => {
+    res.status(200).send(req.session.cart)
+});
+
+app.post('/api/cart', (req, res) => {
+    let item = req.body;
+    req.session.cart.push(item)
+    res.status(200).json(req.session.cart)
+})
+
+app.delete('/api/cart/:id', (req, res) => {
+    let {id} = req.params;
+        let newCart = req.session.cart.findIndex(item => {
+           return +id === item.id
+        })
+        if(newCart === -1){
+            res.status(404).send(`Item with id ${id} does not exist`)
+        }else {
+            req.session.cart.splice(newCart, 1)
+            res.json(req.session.cart)
+        }
+})
 
 
 ///////////////////EMAIL////////////////////

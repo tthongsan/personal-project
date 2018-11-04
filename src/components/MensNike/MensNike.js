@@ -38,6 +38,12 @@ getNike() {
   })
 }
 
+addToCart = (name, price, image, id) => {
+  axios.post('/api/cart', {name:name, price:price, image:image, id:id}).then(res => {
+    console.log('added to cart', res)
+  })
+}
+
 
 
   render() {
@@ -55,14 +61,8 @@ getNike() {
         <p>${shoe.price}</p>
       </div>
       <div>
-        <button 
-            className="snipcart-add-item product-btn"
-            data-item-id={shoe.id}
-            data-item-name={shoe.name}
-            data-item-price={shoe.price}
-            data-item-image={shoe.image}
-            data-item-url="http://myapp.com/"
-            data-item-description="xxx">
+        <button onClick={() => this.addToCart(shoe.name, shoe.price, shoe.image, shoe.id)}>
+ 
           Add to cart
         </button>
       </div>

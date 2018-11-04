@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux';
 import axios from 'axios';
-import { userLogin } from '../../ducks/reducer';
+import { userLogin , updateLoggin} from '../../ducks/reducer';
 
 class Profile extends Component {
     constructor() {
@@ -15,6 +15,9 @@ class Profile extends Component {
 componentDidMount() {
     axios.get('/api/me').then(res => {
         this.props.userLogin(res.data);
+        if(res.data.user){
+            this.props.updateLoggin(true)
+        }
     }).catch(error => {
         this.setState({error})
     }).then(() => {
@@ -22,13 +25,17 @@ componentDidMount() {
     })
  }
 
+ logIn = () => {
+     const redirectUri = encodeURIComponent(window.location.origin + '/auth/callback');
+     const url = `https://${process.env.REACT_APP_AUTH0_DOMAIN}/authorize?client_id=${process.env.REACT_APP_AUTH0_CLIENT_ID}&scope=openid%20profile%20email&redirect_uri=${redirectUri}&response_type=code`;
+     window.location = url;
+ }
+
   render() {
     const { loading, error} = this.state;
     const { user } = this.props;
 
-    const redirectUri = encodeURIComponent(window.location.origin + '/auth/callback');
-    const url = `https://${process.env.REACT_APP_AUTH0_DOMAIN}/authorize?client_id=${process.env.REACT_APP_AUTH0_CLIENT_ID}&scope=openid%20profile%20email&redirect_uri=${redirectUri}&response_type=code`;
-      
+    
 
     return (
       <div>
@@ -44,7 +51,7 @@ componentDidMount() {
                     <img src={user.picture} alt=""/>
                 </div>
                 : <div>
-                    you need to <a href={url}>Login</a>
+                    you need to <button onClick={() => this.logIn()}>Login</button>
                 </div>
         }
       </div>
@@ -57,4 +64,4 @@ function mapStateToProps (state) {
     return {user};
 }
 
-export default connect(mapStateToProps, {userLogin})(Profile);
+export default connect(mapStateToProps, {userLogin, updateLoggin})(Profile);
