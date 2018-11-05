@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux';
 import axios from 'axios';
+import './Profile.css';
 import { userLogin , updateLoggin} from '../../ducks/reducer';
 
 class Profile extends Component {
@@ -38,22 +39,24 @@ componentDidMount() {
     
 
     return (
-      <div>
-        <h1>Profile</h1>
-        {loading
-            ? <div>Loading . . . </div>
-            : error
-                ? <div>There was error loading</div>
-                : user
-                ? <div>
-                    <div>Name: {user.name}</div>
-                    <div>Email: {user.email}</div>
-                    <img src={user.picture} alt=""/>
-                </div>
-                : <div>
-                    you need to <button onClick={() => this.logIn()}>Login</button>
-                </div>
-        }
+      <div className="profile-container">
+        <div>
+            <h1>Profile</h1>
+            {loading
+                ? <div>Loading . . . </div>
+                : error
+                    ? <div>There was error loading</div>
+                    : user
+                    ? <div>
+                        <div>Name: {user.name}</div>
+                        <div>Email: {user.email}</div>
+                        <img src={user.picture} alt=""/>
+                    </div>
+                    : <div>
+                        <button onClick={() => this.logIn()}>Login</button>
+                    </div>
+            }
+        </div>
       </div>
     )
   }

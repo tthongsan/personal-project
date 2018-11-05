@@ -2,6 +2,7 @@ import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 import Landing from './components/Landing/Landing';
 import Mens from './components/Mens/Mens';
+import Womens from './components/Womens/Womens';
 import Product from './components/Product/Product';
 import MensNike from './components/MensNike/MensNike';
 import MensAdidas from './components/MensAdidas/MensAdidas';
@@ -19,6 +20,7 @@ export default
 <Switch>
     <Route exact path="/" component={Landing} />
     <Route path="/mens" component={Mens} />
+    <Route path="/womens" component={Womens} />
     <Route path="/nike" component={MensNike}/>
     <Route path="/converse" component={MensConverse}/>
     <Route path="/adidas" component={MensAdidas} />

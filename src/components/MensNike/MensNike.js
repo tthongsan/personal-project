@@ -61,7 +61,7 @@ addToCart = (name, price, image, id) => {
         <p>${shoe.price}</p>
       </div>
       <div>
-        <button onClick={() => this.addToCart(shoe.name, shoe.price, shoe.image, shoe.id)}>
+        <button className="product-btn" onClick={() => this.addToCart(shoe.name, shoe.price, shoe.image, shoe.id)}>
  
           Add to cart
         </button>
@@ -74,12 +74,15 @@ addToCart = (name, price, image, id) => {
     return (
       
           <div className="mensShoespage">
-                
               <div className="displayShoes">
-                <Categories />
-                <Scroll>
-                  {mappedShoes}
-                </Scroll>
+                
+                  <h1>NIke</h1>
+                <div className="shoeCat-container">
+                  <Categories />
+                  <Scroll>
+                    {mappedShoes}
+                  </Scroll>
+                </div>
               </div>
     
           </div>

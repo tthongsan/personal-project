@@ -16,7 +16,7 @@ class Navbar extends Component {
         </div>
         <div className="navbar-list">
           <div><NavLink to="/mens" activeStyle={{color:'red'}} className="nav-links">Men's</NavLink></div>
-          <div><NavLink to="/women" activeStyle={{color:'red'}} className="nav-links">Woman's</NavLink></div>
+          <div><NavLink to="/womens" activeStyle={{color:'red'}} className="nav-links">Woman's</NavLink></div>
           <div><NavLink to="/new" activeStyle={{color:'red'}} className="nav-links">New Releases</NavLink></div>
           <div><NavLink to="/about" activeStyle={{color:'red'}} className="nav-links">About</NavLink></div>
           <div><NavLink to="/profile" className="nav-links">Login</NavLink></div>

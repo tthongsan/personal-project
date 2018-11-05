@@ -6,10 +6,15 @@
 .displayShoes {
     width: 1500px;
     display: flex;
+    flex-direction: column;
     flex-wrap: wrap;
     margin: 0 auto;
     justify-content: center;
     background: #fff;
+}
+
+.shoeCat-container{
+    display: flex;
 }
 
 

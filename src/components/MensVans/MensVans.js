@@ -63,11 +63,13 @@ getVans() {
           <div className="mensShoespage">
           
               <div className="displayShoes">
-                <Categories />
-                  
-                <Scroll>
-                  {mappedShoes}
-                </Scroll>
+                <h1>VANS</h1>
+                <div className="shoeCat-container">
+                  <Categories />
+                  <Scroll>
+                    {mappedShoes}
+                  </Scroll>
+                </div>
               </div>
     
           </div>
