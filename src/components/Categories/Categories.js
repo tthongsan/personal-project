@@ -8,11 +8,11 @@ function Categories() {
       <h1>Brands</h1>
       <div className="brand-list">
         <Link to="/adidas"><h3>Adidas</h3></Link>
-        <h3>Converse</h3>
+        <Link to="/converse"><h3>Converse</h3></Link>
         <Link to="/nike"><h3>Nike</h3></Link>
-        <h3>New Balance</h3>
+        <Link to="/newbalance"><h3>New Balance</h3></Link>
         <Link to="/vans"><h3>Vans</h3></Link>
-        <h3>Under Armour</h3>
+        <Link to="/underarmour"><h3>Under Armour</h3></Link>
       </div>
     </div>
   )

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import './CartPage.css';
 import {connect} from 'react-redux';
 import {updateLoggin} from '../../ducks/reducer';
 

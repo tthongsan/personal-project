@@ -9,6 +9,9 @@ import MensVans from './components/MensVans/MensVans';
 import Admin from './components/Admin/Admin';
 import CartPage from './components/CartPage/CartPage';
 import Profile from './components/Profile/Profile';
+import MensConverse from './components/MensConverse/MensConverse';
+import MensNewBalance from './components/MensNewBalance/MensNewBalance';
+import MensUnderArmour from './components/MensUnderArmour/MensUnderArmour';
 //import Womens from './components/'
 
 
@@ -17,11 +20,14 @@ export default
     <Route exact path="/" component={Landing} />
     <Route path="/mens" component={Mens} />
     <Route path="/nike" component={MensNike}/>
+    <Route path="/converse" component={MensConverse}/>
     <Route path="/adidas" component={MensAdidas} />
-    <Route path={`/product/:name`} component={Product}/>
+    <Route path="/product/:name" component={Product}/>
     <Route path="/vans" component={MensVans}/>
     <Route path="/admin" component={Admin} />
     <Route path="/cart" component={CartPage} />
     <Route path="/profile" component={Profile} />
+    <Route path="/newbalance" component={MensNewBalance}/>
+    <Route path="/underarmour" component={MensUnderArmour} />
 </Switch>
 // <Route path="/profile" component={Profile} />
