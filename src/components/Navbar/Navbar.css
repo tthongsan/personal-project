@@ -11,24 +11,29 @@
     justify-content: space-around;
     align-items: center;
     margin: 0 auto;
-    background-color: rgb(255, 255, 255);
+    background-color: #444444;
     border-bottom: 1px solid rgba(182, 182, 182, 0.575);
 }
 
-.logo {
-    height: 100px;
+.fa-grin-stars {
+    font-size: 100px;
+    color: white;
 }
 
 .navbar-list {
-    width: 500px;
+    width: 600px;
     display: flex;
     justify-content: space-between;
     list-style-type: none;
 }
 
 .nav-links {
-    color: rgb(19, 9, 9);
+    color: #ffffff;
     text-decoration: none;
+}
+
+.nav-links:hover {
+    text-decoration: underline;
 }
 
 

@@ -1,3 +1,21 @@
 .mens-title{
+    background: #d5d5d3;
     font-size: 60px;
+}
+
+.mens-links{
+    width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-evenly;
+    color: #fdd947;
+}
+
+.mens-nav{
+    color: #252525; 
+    text-decoration: none;
+}
+
+.mens-page {
+    background: #d5d5d3
 }

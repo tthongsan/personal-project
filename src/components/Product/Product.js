@@ -22,17 +22,19 @@ class Product extends Component{
     
     <div className="item-detail">
       <div className="item-with-desc">
-        <img className="image-detail" src={shoe.image} alt=""/>
+        <div className="image-detail">
+          <img className="product-img" src={shoe.image} alt=""/>
+        </div>
         <div className="item-desc">
-          <p>{shoe.name}</p>
-          <p>${shoe.price}</p>
-          <button onClick={() => this.addToCart(shoe.name, shoe.price, shoe.image, shoe.id)}>Add to cart</button>
+          <p className="product-title">{shoe.name}</p>
+          <p className="product-price">${shoe.price}</p>
+          <button className="product-btn" onClick={() => this.addToCart(shoe.name, shoe.price, shoe.image, shoe.id)}>Add to cart</button>
         </div>
   
       </div>
-      <div>
-      <span>Description</span>
-      <p>{shoe.details}</p>
+      <div className="product-desc">
+        <span className="details">Details</span>
+        <p className="shoe-details">{shoe.details}</p>
       </div>
     </div>
     )
