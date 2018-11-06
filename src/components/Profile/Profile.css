@@ -4,3 +4,10 @@
     margin: 0 auto;
     background-color: #fff;
 }
+
+.login-button {
+    height: 80px;
+    width: 200px;
+    font-size: 35px;
+    background-color: gold;
+}

@@ -6,20 +6,20 @@ const Footer = () => {
     <div className="footer">
       <div className="payment">
         <span>Payment options</span>
-        <ul class="payment-methods">
-          <li><i class="fa fa-paypal"></i></li>
-          <li><i class="fab fa-bitcoin"></i></li>
-          <li><i class="fab fa-cc-visa"></i></li>
-          <li><i class="fab fa-cc-mastercard"></i></li>
-          <li><i class="fab fa-cc-discover"></i></li>
+        <ul className="payment-methods">
+          <li><i className="fa fa-paypal"></i></li>
+          <li><i className="fab fa-bitcoin"></i></li>
+          <li><i className="fab fa-cc-visa"></i></li>
+          <li><i className="fab fa-cc-mastercard"></i></li>
+          <li><i className="fab fa-cc-discover"></i></li>
         </ul> 
       </div>
       <div>
         <span>follow us</span>
-        <ul class="social-media">
-          <li><i class="fa fa-twitter fa-2x"></i></li>
-          <li><i class="fa fa-facebook fa-2x"></i></li>
-          <li><i class="fa fa-instagram fa-2x"></i></li>
+        <ul className="social-media">
+          <li><i className="fa fa-twitter fa-2x"></i></li>
+          <li><i className="fa fa-facebook fa-2x"></i></li>
+          <li><i className="fa fa-instagram fa-2x"></i></li>
         </ul>
       </div>
     </div>

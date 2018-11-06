@@ -12,7 +12,7 @@ class Navbar extends Component {
     <div className="navbar-container">
       <div className="navbar">
         <div>
-          <h1><Link to="/"><i class="far fa-grin-stars"></i></Link></h1>
+          <h1><Link to="/"><i className="far fa-grin-stars"></i></Link></h1>
         </div>
         <div className="navbar-list">
           <div><NavLink exact to="/mens" className="nav-links">Men's</NavLink></div>

@@ -16,6 +16,8 @@ const saltRounds = 10;
 const app = express();
 app.use(bodyParser.json());
 
+app.use( express.static( `${__dirname}/../build` ) );
+
 app.use(session({
     secret: process.env.SESSION_SECRET,
     resave: false,
@@ -35,7 +37,6 @@ app.post('/api/logout', AC.logout);
 app.get('/auth/callback', AC.handleCallback);
 
 
-app.use( express.static( `${__dirname}/../build` ) );
 
 
 /////////////////////PRODUCTS////////////////////////

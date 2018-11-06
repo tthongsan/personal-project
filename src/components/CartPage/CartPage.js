@@ -35,7 +35,7 @@ getCartItems(){
 
 removeFromCart = (id) => {
   axios.delete(`/api/cart/${id}`).then(res => {
-    {this.getCartItems()}
+    this.getCartItems()
   })
 }
 
@@ -50,7 +50,7 @@ removeFromCart = (id) => {
           {
           this.props.loggedIn === true || this.state.cart.length !== 0
           ? 
-            this.state.cart.map(item => {
+             this.state.cart.map(item => {
               return <div className="each-item">
                 <img className="cart-img" src={item.image}/>
                 <p className="cart-name">{item.name}</p>
@@ -61,7 +61,7 @@ removeFromCart = (id) => {
             })
             : 
             <div>
-              shopping cart is empty
+              Please sign in
             </div>
           }
           </CartScroll>
@@ -69,7 +69,7 @@ removeFromCart = (id) => {
       <div className="order-summary">
           <CartScroll>
           <h1 className="sando">ORDER SUMMARY</h1>
-          {this.state.cart.map(item => {
+          {this.state.cart && this.state.cart.map(item => {
             return <div className="order-totals">
               <p>{item.name}</p>
               <p>${item.price}.00</p>

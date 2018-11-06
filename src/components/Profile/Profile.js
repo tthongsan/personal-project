@@ -32,6 +32,12 @@ componentDidMount() {
      window.location = url;
  }
 
+ logOut = () => {
+    axios.post('/api/logout').then(res => {
+        console.log('logged out', res.data)
+    })
+ }
+
   render() {
     const { loading, error} = this.state;
     const { user } = this.props;
@@ -51,9 +57,10 @@ componentDidMount() {
                         <div>Name: {user.name}</div>
                         <div>Email: {user.email}</div>
                         <img src={user.picture} alt=""/>
+                        <button onClick={() => this.logOut()}>Log out</button>
                     </div>
                     : <div>
-                        <button onClick={() => this.logIn()}>Login</button>
+                        <button className="login-button" onClick={() => this.logIn()}>Login</button>
                     </div>
             }
         </div>

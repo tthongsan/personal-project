@@ -23,3 +23,16 @@ create table users (
     name text not null,
     picture text not null
 );
+
+
+////////bcrypt////////////
+
+CREATE TABLE users_bcrypt (
+  id SERIAL PRIMARY KEY,
+  username VARCHAR UNIQUE,
+  password VARCHAR
+);
+
+INSERT INTO users_bcrypt (username, password) values ($1, $2);
+
+SELECT * FROM users_bcrypt WHERE username = $1 LIMIT 1;
