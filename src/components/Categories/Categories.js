@@ -1,18 +1,18 @@
 import React from 'react';
 import './Categories.css';
-import {Link} from 'react-router-dom';
+import {NavLink} from 'react-router-dom';
 
 function Categories() {
   return (
     <div className="categories">
-      <h1>Brands</h1>
+      <h2 className="cat-title">Brands</h2>
       <div className="brand-list">
-        <Link to="/adidas"><h3>Adidas</h3></Link>
-        <Link to="/converse"><h3>Converse</h3></Link>
-        <Link to="/nike"><h3>Nike</h3></Link>
-        <Link to="/newbalance"><h3>New Balance</h3></Link>
-        <Link to="/vans"><h3>Vans</h3></Link>
-        <Link to="/underarmour"><h3>Under Armour</h3></Link>
+        <div><NavLink className="cat-nav" activeStyle={{ color: 'red' }} exact to="/adidas">Adidas</NavLink></div>
+        <div><NavLink className="cat-nav" activeStyle={{ color: 'red' }} exact to="/converse">Converse</NavLink></div>
+        <div><NavLink className="cat-nav" activeStyle={{ color: 'red' }} exact to="/nike">Nike</NavLink></div>
+        <div><NavLink className="cat-nav" activeStyle={{ color: 'red' }} exact to="/newbalance">New Balance</NavLink></div>
+        <div><NavLink className="cat-nav" activeStyle={{ color: 'red' }} exact to="/vans">Vans</NavLink></div>
+        <div><NavLink className="cat-nav" activeStyle={{ color: 'red' }} exact to="/underarmour">Under Armour</NavLink></div>
       </div>
     </div>
   )

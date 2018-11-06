@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './MensAdidas.css';
+import './WomensNike.css';
 //import MensNikeShoes from '../../jsonFile/nikeMensLifeShoes.json';
 import Categories from '../Categories/Categories';
 //import Product from '../Product/Product';
@@ -7,11 +7,11 @@ import {Link} from 'react-router-dom';
 import Scroll from '../Scroll/Scroll';
 import axios from 'axios';
 
-class MensAdidas extends Component {
+class WomensNike extends Component {
   constructor () {
     super();
     this.state = {
-      adidas: []
+      wnikes: []
     };
   }
 
@@ -26,15 +26,15 @@ class MensAdidas extends Component {
 // }
 
 componentDidMount() {
-  this.getAdidas();
+  this.getWomensNike();
 }
 
 
-getAdidas() {
-  axios.get(`/api/product/${'adidas'}`).then(res => {
+getWomensNike() {
+  axios.get(`/api/product/${'wnike'}`).then(res => {
     //console.log(res.data[0].shoes_name)
     console.log(res.data)
-    this.setState({adidas: res.data})
+    this.setState({wnikes: res.data})
   })
 }
 
@@ -44,34 +44,39 @@ addToCart = (name, price, image, id) => {
   })
 }
 
+
+
   render() {
     //console.log('this.state.nikeshoes', this.state.nikeShoes)
       //console.log('hit rennderrrrr')
-      let mappedShoes = this.state.adidas && this.state.adidas.map(shoe => {
-        return <div className="eachShoe" key={shoe.id}>
-         <div className="img-box">
-           <Link to={{pathname: `/product/${shoe.name}`, state:{shoe}}}><img className="shoeimg" src={shoe.image} alt=""/></Link>
-         </div>
-         <div className="plus-heart">
-           <div className="shoe-desc">
-             <h4>{shoe.name}</h4>
-             <h3>{shoe.brand}</h3>
-             <p>${shoe.price}</p>
-           </div>
-           <button className="product-btn" onClick={() => this.addToCart(shoe.name, shoe.price, shoe.image, shoe.id)}>
-                Add to cart
-            </button>
-           <div><i className="far fa-heart icon"></i></div>
-         </div>
-        </div>
-      })
+ let mappedShoes = this.state.wnikes && this.state.wnikes.map(shoe => {
+   return <div className="eachShoe" key={shoe.id}>
+    <div className="img-box">
+      <Link to={{pathname: `/product/${shoe.name}`, state:{shoe}}}><img className="shoeimg" src={shoe.image} alt=""/></Link>
+    </div>
+    <div className="plus-heart">
+      <div className="shoe-desc">
+        <h4>{shoe.name}</h4>
+        <h3>NIKE</h3>
+        <p>${shoe.price}</p>
+      </div>
+      <div>
+        <button className="product-btn" onClick={() => this.addToCart(shoe.name, shoe.price, shoe.image, shoe.id)}>
+ 
+          Add to cart
+        </button>
+      </div>
+      <div><i className="far fa-heart icon"></i></div> 
+    </div>
+   </div>
+ })
     
     return (
       
           <div className="mensShoespage">
-          
               <div className="displayShoes">
-                <h1>ADIDAS</h1>
+                
+                  <h1>NIke</h1>
                 <div className="shoeCat-container">
                   <Categories />
                   <Scroll>
@@ -86,4 +91,4 @@ addToCart = (name, price, image, id) => {
   }
 }
 
-export default MensAdidas;
+export default WomensNike;

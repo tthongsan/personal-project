@@ -1,6 +1,12 @@
+.mens-page{
+    width: 1500px;
+    margin: 0 auto;
+}
+
 .mens-title{
+    margin-top: 0;
     background: #d5d5d3;
-    font-size: 60px;
+    font-size: 75px;
 }
 
 .mens-links{
@@ -12,9 +18,16 @@
 }
 
 .mens-nav{
+    font-size: 20px;
+    letter-spacing: 2px;
     color: #252525; 
     text-decoration: none;
 }
+
+.mens-nav:hover {
+    text-decoration: underline;
+}
+
 
 .mens-page {
     background: #d5d5d3

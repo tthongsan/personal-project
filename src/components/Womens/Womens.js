@@ -9,12 +9,12 @@ const Womens = () => {
     <div className="mens-page">
     <h1 className="mens-title">Womens</h1>
     <ul className="mens-links">
-      <li><NavLink className="mens-nav" to="/nike">Nike</NavLink></li>
-      <li><NavLink  className="mens-nav" to="/adidas">Adidas</NavLink></li>
-      <li><NavLink  className="mens-nav" to="/converse">Converse</NavLink></li>
-      <li><NavLink  className="mens-nav" to="/underarmour">Under Armour</NavLink></li>
-      <li><NavLink  className="mens-nav" to="/vans">Vans</NavLink></li>
-      <li><NavLink className="mens-nav" to="/newbalance">New Balance</NavLink></li>
+      <li><NavLink className="mens-nav" to="/wnike">Nike</NavLink></li>
+      <li><NavLink  className="mens-nav" to="/wadidas">Adidas</NavLink></li>
+      <li><NavLink  className="mens-nav" to="/wconverse">Converse</NavLink></li>
+      <li><NavLink  className="mens-nav" to="/wunderarmour">Under Armour</NavLink></li>
+      <li><NavLink  className="mens-nav" to="/wvans">Vans</NavLink></li>
+      <li><NavLink className="mens-nav" to="/wnewbalance">New Balance</NavLink></li>
     </ul>
     <WomensTopBanner/>
     </div>

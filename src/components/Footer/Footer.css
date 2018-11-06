@@ -1,10 +1,10 @@
 .footer {
     height: 20vh;
-    border-top: 4px solid rgba(184, 166, 63, 0.562);
-    color: rgb(197, 177, 63);
+    /* border-top: 2px solid #ffdc73; */
+    color: #ffdc73;
     display: flex;
     justify-content: space-around;
-    background-color: #252525;
+    background: #241d04;
 }
 
 .footer > span {
@@ -29,7 +29,7 @@
   }
 
 .social-media li .fa{ 
-    background: rgb(197, 177, 63);
+    background: #ffdc73;
     color: #252525;
     width: 50px;
     height: 50px;

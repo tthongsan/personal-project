@@ -13,6 +13,12 @@ import Profile from './components/Profile/Profile';
 import MensConverse from './components/MensConverse/MensConverse';
 import MensNewBalance from './components/MensNewBalance/MensNewBalance';
 import MensUnderArmour from './components/MensUnderArmour/MensUnderArmour';
+import WomensNike from './components/WomensNike/WomensNike';
+import WomensAdidas from './components/WomensAdidas/WomensAdidas';
+import WomensConverse from './components/WomensConverse/WomensConverse';
+import WomensUnderArmour from './components/WomensUnderArmour/WomensUnderArmour';
+import WomensVans from './components/WomensVans/WomensVans';
+import WomensNewBalance from './components/WomensNewBalance/WomensNewBalance';
 //import Womens from './components/'
 
 
@@ -31,5 +37,11 @@ export default
     <Route path="/profile" component={Profile} />
     <Route path="/newbalance" component={MensNewBalance}/>
     <Route path="/underarmour" component={MensUnderArmour} />
+    <Route path="/wnike" component={WomensNike} />
+    <Route path="/wadidas" component={WomensAdidas} />
+    <Route path="/wconverse" component={WomensConverse} />
+    <Route path="/wunderarmour" component={WomensUnderArmour} />
+    <Route path="/wvans" component={WomensVans} />
+    <Route path="/wnewbalance" component={WomensNewBalance} />
 </Switch>
 // <Route path="/profile" component={Profile} />

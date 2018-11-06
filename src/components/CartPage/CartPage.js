@@ -3,6 +3,7 @@ import axios from 'axios';
 import './CartPage.css';
 import {connect} from 'react-redux';
 import {updateLoggin} from '../../ducks/reducer';
+import CartScroll from '../CartScroll/CartScroll';
 
 class CartPage extends Component {
   constructor() {
@@ -42,24 +43,42 @@ removeFromCart = (id) => {
   render() {
     
     return (
-      <div>
-      {
-       this.props.loggedIn === true || this.state.cart.length !== 0
-       ? 
-        this.state.cart.map(item => {
-          return <div>
-            <p>{item.name}</p>
-            <p>{item.price}</p>
-            <img src={item.image}/>
-            <button onClick={() => this.removeFromCart(item.id)}>remove</button>
-          </div>
-        })
-        : 
-        <div>
-          Log in to view cart
+      <div className="cart-container">
+        <div className="title-cart">
+          <h1 className="sando">SHOPPING CART</h1>
+          <CartScroll>
+          {
+          this.props.loggedIn === true || this.state.cart.length !== 0
+          ? 
+            this.state.cart.map(item => {
+              return <div className="each-item">
+                <img className="cart-img" src={item.image}/>
+                <p className="cart-name">{item.name}</p>
+                <p className="cart-price">{item.price}</p>
+                
+                <i onClick={() => this.removeFromCart(item.id)} class="fas fa-times"></i>
+              </div>
+            })
+            : 
+            <div>
+              shopping cart is empty
+            </div>
+          }
+          </CartScroll>
         </div>
-      }
-       total {this.state.total}
+      <div className="order-summary">
+          <CartScroll>
+          <h1 className="sando">ORDER SUMMARY</h1>
+          {this.state.cart.map(item => {
+            return <div className="order-totals">
+              <p>{item.name}</p>
+              <p>${item.price}.00</p>
+            </div>
+          })}
+          </CartScroll>
+        total: ${this.state.total}.00
+      </div>
+       
       </div>
     )
   }

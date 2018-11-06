@@ -1,0 +1,8 @@
+.cart-scroller {
+    overflow: scroll;
+    height: 600px;
+    width: 606px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
