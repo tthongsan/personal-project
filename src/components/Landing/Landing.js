@@ -9,6 +9,7 @@ class Landing extends Component {
       email: ''
     }
   }
+  
 handleChange = (val) => {
   this.setState({email: val})
 }

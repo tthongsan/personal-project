@@ -1,0 +1,1 @@
+INSERT INTO users_bcrypt (username, password) values ($1, $2);

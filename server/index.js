@@ -6,10 +6,10 @@ const SC = require('./controller/save_controller');
 const UC = require('./controller/userController');
 const AC = require('./controller/authController');
 const CC = require('./controller/cartController');
+
 const axios = require('axios');
 const fs = require('fs')
 require('dotenv').config();
-var bcrypt = require('bcrypt');
 const saltRounds = 10;
 
 
@@ -38,6 +38,14 @@ app.get('/auth/callback', AC.handleCallback);
 
 
 
+//////////////////////bcrypt////////////////////////////
+
+app.post('/api/register', UC.createUserBcrypt);
+
+  
+app.post('/api/login', UC.adminLoginBcrypt);
+
+app.post('/api/logout', UC.adminLogOutBcrypt);
 
 /////////////////////PRODUCTS////////////////////////
 app.get('/api/product/:brand', SC.getShoes);

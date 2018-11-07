@@ -38,7 +38,9 @@ componentDidMount() {
     })
  }
 
+
   render() {
+    this.props.updateLoggin();
     const { loading, error} = this.state;
     const { user } = this.props;
 

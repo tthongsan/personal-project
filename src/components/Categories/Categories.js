@@ -7,12 +7,12 @@ function Categories() {
     <div className="categories">
       <h2 className="cat-title">Brands</h2>
       <div className="brand-list">
-        <div><NavLink className="cat-nav" activeStyle={{ color: 'red' }} exact to="/adidas">Adidas</NavLink></div>
-        <div><NavLink className="cat-nav" activeStyle={{ color: 'red' }} exact to="/converse">Converse</NavLink></div>
-        <div><NavLink className="cat-nav" activeStyle={{ color: 'red' }} exact to="/nike">Nike</NavLink></div>
-        <div><NavLink className="cat-nav" activeStyle={{ color: 'red' }} exact to="/newbalance">New Balance</NavLink></div>
-        <div><NavLink className="cat-nav" activeStyle={{ color: 'red' }} exact to="/vans">Vans</NavLink></div>
-        <div><NavLink className="cat-nav" activeStyle={{ color: 'red' }} exact to="/underarmour">Under Armour</NavLink></div>
+        <div><NavLink exact to="/adidas" className="cat-nav" activeStyle={{ color: 'red' }} >Adidas</NavLink></div>
+        <div><NavLink exact to="/converse" className="cat-nav" activeStyle={{ color: 'red' }} >Converse</NavLink></div>
+        <div><NavLink exact to="/nike" className="cat-nav" activeStyle={{ color: 'red' }} >Nike</NavLink></div>
+        <div><NavLink exact to="/newbalance" className="cat-nav" activeStyle={{ color: 'red' }} >New Balance</NavLink></div>
+        <div><NavLink exact to="/vans" className="cat-nav" activeStyle={{ color: 'red' }} >Vans</NavLink></div>
+        <div><NavLink exact to="/underarmour" className="cat-nav" activeStyle={{ color: 'red' }} >Under Armour</NavLink></div>
       </div>
     </div>
   )

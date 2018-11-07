@@ -1,6 +1,7 @@
 .footer {
     height: 20vh;
-    width: 1500px;
+    width: 100%;
+    max-width: 1500px;
     margin: 0 auto;
     /* border-top: 2px solid #ffdc73; */
     color: #ffdc73;

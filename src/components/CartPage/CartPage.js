@@ -76,7 +76,7 @@ removeFromCart = (id) => {
             </div>
           })}
           </CartScroll>
-        total: ${this.state.total}.00
+        <div className="cart-total">total: ${this.state.total}.00</div>
       </div>
        
       </div>
