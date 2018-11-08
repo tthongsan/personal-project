@@ -61,7 +61,7 @@ app.put('/api/product/:id', SC.editItemsInInventory);
 
 ///////////////////CART///////////////////////////
 app.get('/api/cart', (req, res) => {
-    res.status(200).send(req.session.cart)
+    res.status(200).send(req.session.cart || [])
 });
 
 app.post('/api/cart', (req, res) => {

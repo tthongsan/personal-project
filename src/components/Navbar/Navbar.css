@@ -14,9 +14,10 @@
     text-shadow: 5px 5px 10px #000;
 }
 
-.fa-globe{
+.profile-nav {
+    color: white;
+    text-decoration: none;
 }
-
 
 .navbar {
     height: 15vh;
@@ -53,4 +54,11 @@
 
 .cart-icon {
     height: 50px;
+}
+
+
+
+
+@media (min-width: 350px) and (max-width: 376px){
+    
 }

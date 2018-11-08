@@ -22,7 +22,7 @@ class Navbar extends Component {
           <div><NavLink exact to="/new" activeStyle={{ color: 'red' }} className="nav-links">New Releases</NavLink></div>
           <div><NavLink exact to="/about" activeStyle={{ color: 'red' }} className="nav-links">About</NavLink></div>
             { this.props.loggedIn ?
-              <div>Logout</div>
+              <div><Link to="/profile" className="profile-nav">Profile</Link></div>
               :
               <div><NavLink exact to="/profile" activeStyle={{ color: 'red' }} className="nav-links">Login</NavLink></div>
             }

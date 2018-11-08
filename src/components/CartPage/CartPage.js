@@ -3,7 +3,9 @@ import axios from 'axios';
 import './CartPage.css';
 import {connect} from 'react-redux';
 import {updateLoggin} from '../../ducks/reducer';
+import {Link} from 'react-router-dom';
 import CartScroll from '../CartScroll/CartScroll';
+
 
 class CartPage extends Component {
   constructor() {
@@ -41,14 +43,14 @@ removeFromCart = (id) => {
 
 
   render() {
-    
+    console.log('cart',this.state.cart)
     return (
       <div className="cart-container">
         <div className="title-cart">
           <h1 className="sando">SHOPPING CART</h1>
           <CartScroll>
           {
-          this.props.loggedIn === true || this.state.cart.length !== 0
+          this.props.loggedIn !== false || this.state.cart.length !== 0
           ? 
              this.state.cart.map(item => {
               return <div className="each-item">
@@ -67,7 +69,11 @@ removeFromCart = (id) => {
           </CartScroll>
         </div>
       <div className="order-summary">
+
+       
+          <div>
           <CartScroll>
+          
           <h1 className="sando">ORDER SUMMARY</h1>
           {this.state.cart && this.state.cart.map(item => {
             return <div className="order-totals">
@@ -75,8 +81,14 @@ removeFromCart = (id) => {
               <p>${item.price}.00</p>
             </div>
           })}
+
           </CartScroll>
+         
+
         <div className="cart-total">total: ${this.state.total}.00</div>
+        <button><Link to="/checkout" className="check-btn">Checkout</Link></button>
+        </div>
+  
       </div>
        
       </div>
