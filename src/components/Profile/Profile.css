@@ -1,6 +1,6 @@
 .profile-container {
     height: 100vh;
-    width: 1500px;
+    width: 1200px;
     margin: 0 auto;
     background-color: #fff;
 }
@@ -10,4 +10,27 @@
     width: 200px;
     font-size: 35px;
     background-color: gold;
+}
+
+
+.user-email-box{
+    width: 400px;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.user-pic {
+    width: 200px;
+    height: 200px;
+}
+
+.profile-container{
+    display: flex;
+    justify-content: space-around;
+}
+
+.username {
+
 }

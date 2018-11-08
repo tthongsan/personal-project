@@ -35,6 +35,7 @@ massive(process.env.CONNECTION_STRING).then((database) => {
 app.get('/api/me', UC.getUserData);
 app.post('/api/logout', AC.logout);
 app.get('/auth/callback', AC.handleCallback);
+app.patch('/api/me:id', UC.editUserName);
 
 
 
@@ -86,6 +87,19 @@ app.delete('/api/cart/:id', (req, res) => {
 
 ///////////////////EMAIL////////////////////
 app.post('/api/email', UC.sendEmail);
+
+
+///////////////////add to favs //////////////
+app.post('/api/favs', (req, res) => {
+    let item = req.body;
+    req.session.favs.push(item)
+    res.status(200).json(req.session.favs)
+})
+
+
+
+
+
 
 //bcrypt 
 // app.use(bodyParser.json());

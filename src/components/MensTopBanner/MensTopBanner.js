@@ -5,6 +5,7 @@ import {Link} from 'react-router-dom';
 const MensTopBanner = () => {
   return (
     <div className="overall-container">
+      <div className="shoes-big-box">
       <div className="banner-container">
         <img className="banner-img" src="https://s3.amazonaws.com/nikeinc/assets/48622/2015-Nike-Mag-02_hd_1600.jpg?1445446034" alt="" />
         <p className="banner-title"></p>
@@ -40,6 +41,7 @@ const MensTopBanner = () => {
         <p className="banner-title"></p>
         <div className="banner-overlay"></div>
         <div className="banner-button"><Link to="/newbalance"> SHOP NEW BALANCE </Link></div>
+      </div>
       </div>
     </div>
   )

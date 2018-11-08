@@ -1,5 +1,6 @@
 .mens-page{
-    width: 1500px;
+    width: 1200px;
+    height: 170vh;
     margin: 0 auto;
 }
 
@@ -10,7 +11,7 @@
 }
 
 .mens-links{
-    width: 1200px;
+    width: 1000px;
     margin: 0 auto;
     display: flex;
     justify-content: space-evenly;

@@ -10,7 +10,7 @@ h1 {
 
 
 .displayShoes {
-    width: 1500px;
+    width: 1200px;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
@@ -20,6 +20,7 @@ h1 {
 }
 
 .shoeCat-container{
+    width: 1200px;
     display: flex;
 }
 
@@ -129,9 +130,9 @@ h1 {
 }
 
 .icon:hover {
-    color: white;
-    background: rgba(184, 166, 63, 0.562);
-    box-shadow: 3px 3px 5px black;
+    color: red;
+    background: #fdd947;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.493);
 
 }
 

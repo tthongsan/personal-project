@@ -1,5 +1,5 @@
 .overall-container {
-    width: 1300px;
+    width: 1200px;
     margin: 0 auto;
     display: flex;
     flex-wrap: wrap;
@@ -8,13 +8,23 @@
 .banner-container {
     margin: 20px;
     position: relative;
-    width: 600px;
-    height: 400px;
+    width: 500px;
+    height: 300px;
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.781);
+  }
+
+  .shoes-big-box {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    justify-content: center;
   }
   
   .banner-overlay {
     position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 100%;
     height: 100%;
     background: rgba(0, 0, 0, 0);
@@ -28,8 +38,8 @@
   
   .banner-img {
     position: absolute;
-    width: 600px;
-    height: 400px;
+    width: 500px;
+    height: 300px;
     left: 0;
   }
   
@@ -55,8 +65,8 @@
   .banner-button {
     position: absolute;
     width: 600px;
-    left:0;
-    top: 200px;
+    left:-40px;
+    top: 152.5px;
     text-align: center;
     opacity: 0;
     transition: opacity .35s ease;

@@ -5,6 +5,7 @@ import {Link} from 'react-router-dom';
 const WomensTopBanner = () => {
   return (
     <div class="overall-container">
+      <div className="shoes-big-box">
       <div class="banner-container">
         <img class="banner-img" src="https://cdn5.kicksonfire.com/wp-content/uploads/2017/10/nike-air-presto-wmns-1.jpg?x33133" alt="" />
         <p class="banner-title"></p>
@@ -40,6 +41,7 @@ const WomensTopBanner = () => {
         <p class="banner-title"></p>
         <div class="banner-overlay"></div>
         <div class="banner-button"><Link to="/wnewbalance"> SHOP NEW BALANCE </Link></div>
+      </div>
       </div>
     </div>
   )

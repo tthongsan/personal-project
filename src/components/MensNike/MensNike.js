@@ -44,6 +44,12 @@ addToCart = (name, price, image, id) => {
   })
 }
 
+// addToFavs = (name, id) => {
+//   axios.post('/api/favs', {name:name, id:id}).then(res => {
+//     console.log('added to favs', res)
+//   })
+// }
+
 
 
   render() {

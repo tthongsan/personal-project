@@ -10,7 +10,9 @@ class Profile extends Component {
         super();
         this.state = {
             loading: true,
-            error: null
+            error: null,
+            favorites: [],
+            name: ''
         };
     }
 
@@ -40,6 +42,16 @@ componentDidMount() {
 
  }
 
+ handleNameChange = (val) => {
+    this.setState({name: val})
+ }
+
+ editName = (id) => {
+     axios.patch(`/api/me${id}`, {name: this.state.name}).then(res => {
+         console.log('changed name', res.data)
+     })
+ }
+
 
   render() {
     
@@ -50,19 +62,28 @@ componentDidMount() {
     
 
     return (
+        
       <div className="profile-container">
         <div>
+        {console.log('in profile',this.props.user)}
             <h1>Profile</h1>
             {loading
                 ? <div>Loading . . . </div>
                 : error
                     ? <div>There was error loading</div>
                     : user
-                    ? <div>
-                        <div>Name: {user.name}</div>
-                        <div>Email: {user.email}</div>
-                        <img src={user.picture} alt=""/>
-                        <button onClick={() => this.logOut()}><Link to="/">Log out</Link></button>
+                    ? <div className="profile-container">
+                        <div className="user-email-box">
+                            <div className="username">Name: {user.name}</div>
+                            <div className="email">Email: {user.email}</div>
+                            <div><input type="text" onChange={(e) => this.handleNameChange(e.target.value)}/></div><button onClick={() => this.editName(user.id)}>change name</button>
+                            <img className="user-pic" src={user.picture} alt=""/>
+                            <button onClick={() => this.logOut()}><Link to="/">Log out</Link></button>
+                        </div>
+                        <div>
+                            <h3></h3>
+                                
+                        </div>
                     </div>
                     : <div>
                         <button className="login-button" onClick={() => this.logIn()}>Login</button>

@@ -4,6 +4,7 @@ import './CartPage.css';
 import {connect} from 'react-redux';
 import {updateLoggin} from '../../ducks/reducer';
 import {Link} from 'react-router-dom';
+import StripeCheckout from 'react-stripe-checkout';
 import CartScroll from '../CartScroll/CartScroll';
 
 
@@ -86,7 +87,17 @@ removeFromCart = (id) => {
          
 
         <div className="cart-total">total: ${this.state.total}.00</div>
-        <button><Link to="/checkout" className="check-btn">Checkout</Link></button>
+        <StripeCheckout
+          amount="500"
+          billingAddress
+          description="shoes"
+          image="https://yourdomain.tld/images/logo.svg"
+          locale="auto"
+          name="eurostep"
+          stripeKey="pk_test_XojTq40wHrmEQPG7ytIBiaRo"
+          token={this.onToken}
+          zipCode
+        />
         </div>
   
       </div>

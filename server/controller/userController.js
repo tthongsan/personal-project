@@ -91,9 +91,19 @@ adminLoginBcrypt: (req, res) => {
     });
 },
 
-    adminLogOutBcrypt: (req, res) => {
+  adminLogOutBcrypt: (req, res) => {
         req.session.destroy();
         res.status(200).send();
+    },
+
+    editUserName: (req, res) => {
+      const {name} = req.body;
+      const {id} = req.params;
+      req.session.user.name = name;
+      const db=req.app.get('db')
+      db.update_name([name, id]).then(() => {
+        res.status(200).send();
+      })
     }
 
 
