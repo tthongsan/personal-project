@@ -1,14 +1,14 @@
 
 
 .navbar-container {
-    max-width: 1200px;
+    max-width: 100%;
     margin: 0 auto;
 }
 
 .logo-title{
     font-weight: 300;
     text-decoration: none;
-    color: gold;
+    color: #fdd947;
     font-size: 70px;
     letter-spacing: 2px;
     text-shadow: 5px 5px 10px #000;
@@ -21,13 +21,14 @@
 
 .navbar {
     height: 15vh;
-    width: 100%;
+    width: 1200px;
     display: flex;
+    flex-direction: column;
     justify-content: space-around;
     align-items: center;
     margin: 0 auto;
-    background-color: #444444;
-    border-bottom: 1px solid rgba(182, 182, 182, 0.575);
+    background-color: #00000070;
+
 }
 
 
@@ -55,6 +56,8 @@
 .cart-icon {
     height: 50px;
 }
+
+
 
 
 

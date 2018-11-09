@@ -44,3 +44,4 @@ export function updateLogout(bool){
         payload: bool
     }
 }
+

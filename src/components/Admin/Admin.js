@@ -112,7 +112,7 @@ register = () => {
             this.state.adminLoggedIn 
             ?
             (
-        <div>
+        <div className="admin-dash">
             inventory: {mappedInventory}
             brand<input type="text" onChange={(e) => this.handleChange('brand', e.target.value)}/>
             style<input type="text" onChange={(e) => this.handleChange('style', e.target.value)}/>
@@ -126,9 +126,9 @@ register = () => {
         </div>
             )
         :
-        <div>
+        <div className="admin-dash">
             admin only
-            <div>
+            <div className="admin-dash">
                 username:<input type="text" onChange={(e) => this.handleChange('username', e.target.value)}/>
                 password:<input type="password" onChange={(e) => this.handleChange('password', e.target.value)}/>
                 <button onClick={() => this.login()}>Log In</button>

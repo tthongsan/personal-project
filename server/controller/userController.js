@@ -104,7 +104,15 @@ adminLoginBcrypt: (req, res) => {
       db.update_name([name, id]).then(() => {
         res.status(200).send();
       })
-    }
+    },
 
+    /////////////////////////////add to fav//////////////////
 
+    addToFavs: (req, res) => {
+      const db=req.app.get('db')
+      let name = req.body;
+      db.add_to_favs(name).then(name => {
+        res.status(200).send(name)
+      })
+  }
 };

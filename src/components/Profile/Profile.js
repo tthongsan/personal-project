@@ -16,7 +16,24 @@ class Profile extends Component {
         };
     }
 
+
+
+componentDidUpdate(prevProps) {
+    if (prevProps !== this.props){
+        this.getTheUser();
+    }
+}
+      
+
+
+
+
+
 componentDidMount() {
+    this.getTheUser();
+ }
+
+ getTheUser = ()=>{
     axios.get('/api/me').then(res => {
         this.props.userLogin(res.data);
         if(res.data.user){
@@ -29,6 +46,7 @@ componentDidMount() {
     })
  }
 
+
  logIn = () => {
      const redirectUri = encodeURIComponent(window.location.origin + '/auth/callback');
      const url = `https://${process.env.REACT_APP_AUTH0_DOMAIN}/authorize?client_id=${process.env.REACT_APP_AUTH0_CLIENT_ID}&scope=openid%20profile%20email&redirect_uri=${redirectUri}&response_type=code`;
@@ -36,6 +54,7 @@ componentDidMount() {
  }
 
  logOut = () => {
+     this.props.updateLoggin(false);
     axios.post('/api/logout').then(res => {
         console.log('logged out', res.data)
     })
@@ -54,8 +73,7 @@ componentDidMount() {
 
 
   render() {
-    
-    
+    console.log('profile props', this.props)
     const { loading, error} = this.state;
     const { user } = this.props;
 
@@ -79,10 +97,6 @@ componentDidMount() {
                             <div><input type="text" onChange={(e) => this.handleNameChange(e.target.value)}/></div><button onClick={() => this.editName(user.id)}>change name</button>
                             <img className="user-pic" src={user.picture} alt=""/>
                             <button onClick={() => this.logOut()}><Link to="/">Log out</Link></button>
-                        </div>
-                        <div>
-                            <h3></h3>
-                                
                         </div>
                     </div>
                     : <div>

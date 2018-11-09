@@ -1,5 +1,6 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
+import About from './components/About/About';
 import Landing from './components/Landing/Landing';
 import Mens from './components/Mens/Mens';
 import Womens from './components/Womens/Womens';
@@ -28,6 +29,7 @@ export default
     <Route exact path="/" component={Landing} />
     <Route path="/mens" component={Mens} />
     <Route path="/womens" component={Womens} />
+    <Route path="/about" component={About} />
     <Route path="/nike" component={MensNike}/>
     <Route path="/converse" component={MensConverse}/>
     <Route path="/adidas" component={MensAdidas} />

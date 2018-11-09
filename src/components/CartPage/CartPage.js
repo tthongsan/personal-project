@@ -42,6 +42,15 @@ removeFromCart = (id) => {
   })
 }
 
+onToken = (token) => {
+  fetch('/save-stripe-token', {
+    method: 'POST',
+    body: JSON.stringify(token),
+  }).then(response => {
+    console.log('hello')
+  });
+}
+
 
   render() {
     console.log('cart',this.state.cart)
@@ -87,17 +96,23 @@ removeFromCart = (id) => {
          
 
         <div className="cart-total">total: ${this.state.total}.00</div>
-        <StripeCheckout
-          amount="500"
-          billingAddress
-          description="shoes"
-          image="https://yourdomain.tld/images/logo.svg"
-          locale="auto"
-          name="eurostep"
-          stripeKey="pk_test_XojTq40wHrmEQPG7ytIBiaRo"
-          token={this.onToken}
-          zipCode
-        />
+        { this.state.cart.length !== 0
+          ?
+            <StripeCheckout
+              amount={this.state.total * 100}
+              billingAddress
+              description="shoes"
+              image="https://yourdomain.tld/images/logo.svg"
+              locale="auto"
+              bitcoin
+              name="Eurostep"
+              stripeKey="pk_test_XojTq40wHrmEQPG7ytIBiaRo"
+              token={this.onToken}
+              zipCode
+            />
+            :
+            <div>add items to cart</div>
+        }
         </div>
   
       </div>

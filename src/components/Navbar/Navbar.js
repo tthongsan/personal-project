@@ -6,27 +6,33 @@ import {connect} from 'react-redux';
 
 class Navbar extends Component {
 
+
+
+
+
+
   render(){
+    console.log(this.props.loggedIn)
   return (
     
     <div className="navbar-container">
       <div className="navbar">
         <div>
           <p ><Link to="/" className="logo-title">
-          eur<i class="fa fa-globe" aria-hidden="true"></i>step
+          <i class="fa fa-globe" aria-hidden="true"></i>
           </Link></p>
         </div>
         <div className="navbar-list">
-          <div><NavLink exact to="/mens" activeStyle={{ color: 'red' }} className="nav-links">Men's</NavLink></div>
-          <div><NavLink exact to="/womens" activeStyle={{ color: 'red' }} className="nav-links">Woman's</NavLink></div>
-          <div><NavLink exact to="/new" activeStyle={{ color: 'red' }} className="nav-links">New Releases</NavLink></div>
-          <div><NavLink exact to="/about" activeStyle={{ color: 'red' }} className="nav-links">About</NavLink></div>
-            { this.props.loggedIn ?
+          <div><NavLink exact to="/mens" activeStyle={{ color: '#fdd947' }} className="nav-links">Men's</NavLink></div>
+          <div><NavLink exact to="/womens" activeStyle={{ color: '#fdd947' }} className="nav-links">Woman's</NavLink></div>
+          <div><NavLink exact to="/new" activeStyle={{ color: '#fdd947' }} className="nav-links">New Releases</NavLink></div>
+          <div><NavLink exact to="/about" activeStyle={{ color: '#fdd947' }} className="nav-links">About</NavLink></div>
+            { this.props.user ?
               <div><Link to="/profile" className="profile-nav">Profile</Link></div>
               :
-              <div><NavLink exact to="/profile" activeStyle={{ color: 'red' }} className="nav-links">Login</NavLink></div>
+              <div><NavLink exact to="/profile" activeStyle={{ color: '#fdd947' }} className="nav-links">Login</NavLink></div>
             }
-          <div><NavLink exact to="/cart" activeStyle={{ color: 'red' }} className="nav-links">Shopping Cart</NavLink></div>
+          <div><NavLink exact to="/cart" activeStyle={{ color: '#fdd947' }} className="nav-links">Shopping Cart</NavLink></div>
         </div>
         
       </div>

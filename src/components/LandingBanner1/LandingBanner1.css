@@ -1,3 +1,24 @@
 .under-title{
+    margin: 0 auto;
+    width: 1200px;
     height: 100vh;
+    display: flex;
+    justify-content: center;
+}
+
+.fa-globe-americas{
+    color: #fdd947;
+    font-size: 250px;
+}
+
+.bb{
+    margin: 0 auto;
+    margin-top: 150px;
+    width: 1200px;
+    display: flex;
+    justify-content: center;
+    color:#fdd947;
+    font-size: 180px;
+    font-weight: 300;
+    letter-spacing: 10px;
 }

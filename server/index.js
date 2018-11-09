@@ -90,11 +90,7 @@ app.post('/api/email', UC.sendEmail);
 
 
 ///////////////////add to favs //////////////
-app.post('/api/favs', (req, res) => {
-    let item = req.body;
-    req.session.favs.push(item)
-    res.status(200).json(req.session.favs)
-})
+app.post('/api/favs', UC.addToFavs);
 
 
 
