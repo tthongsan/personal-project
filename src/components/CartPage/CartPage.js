@@ -42,18 +42,30 @@ removeFromCart = (id) => {
   })
 }
 
-onToken = (token) => {
-  fetch('/save-stripe-token', {
-    method: 'POST',
-    body: JSON.stringify(token),
-  }).then(response => {
-    console.log('hello')
-  });
+
+onToken = (stripeToken) =>{
+  console.log('onToken', stripeToken)
+  axios.post('/api/charge',
+    {
+      method: 'POST',
+      body: stripeToken,
+      amount: this.state.total * 100
+    }).then(response => {
+      console.log('success', response.data.success)
+    })
 }
+    
+
+
 
 
   render() {
     console.log('cart',this.state.cart)
+
+    
+    
+
+
     return (
       <div className="cart-container">
         <div className="title-cart">
@@ -79,8 +91,6 @@ onToken = (token) => {
           </CartScroll>
         </div>
       <div className="order-summary">
-
-       
           <div>
           <CartScroll>
           
@@ -98,18 +108,13 @@ onToken = (token) => {
         <div className="cart-total">total: ${this.state.total}.00</div>
         { this.state.cart.length !== 0
           ?
+            <div>
             <StripeCheckout
-              amount={this.state.total * 100}
-              billingAddress
-              description="shoes"
-              image="https://yourdomain.tld/images/logo.svg"
-              locale="auto"
-              bitcoin
-              name="Eurostep"
               stripeKey="pk_test_XojTq40wHrmEQPG7ytIBiaRo"
               token={this.onToken}
-              zipCode
             />
+            
+                   </div>   
             :
             <div>add items to cart</div>
         }
@@ -123,7 +128,10 @@ onToken = (token) => {
 }
 
 const mapStateToProps = (state) => {
-  return {loggedIn: state.loggedIn}
+  const {loggedIn} = state;
+  return loggedIn
 }
 
 export default connect(mapStateToProps, {updateLoggin})(CartPage);
+
+

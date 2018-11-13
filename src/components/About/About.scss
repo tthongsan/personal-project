@@ -1,0 +1,25 @@
+//////////color/////////
+$background-white: rgba(255, 255, 255, 0.952);
+
+.about-container {
+    margin: 0 auto;
+    width: 1200px;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: $background-white;
+
+    .about-img {
+        width: 1000px;
+        height: 600px;
+        position: relative;
+    }
+}
+
+
+
+
+
+
+

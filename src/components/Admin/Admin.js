@@ -112,17 +112,19 @@ register = () => {
             this.state.adminLoggedIn 
             ?
             (
-        <div className="admin-dash">
-            inventory: {mappedInventory}
-            brand<input type="text" onChange={(e) => this.handleChange('brand', e.target.value)}/>
-            style<input type="text" onChange={(e) => this.handleChange('style', e.target.value)}/>
-            name<input type="text" onChange={(e) => this.handleChange('name', e.target.value)}/>
-            price<input type="number" onChange={(e) => this.handleChange('price', e.target.value)}/>
-            image<input type="text" onChange={(e) => this.handleChange('image', e.target.value)}/>
-            details<input type="text" onChange={(e) => this.handleChange('details', e.target.value)}/>
-            quantity<input type="text" onChange={(e) => this.handleChange('quantity', e.target.value)}/>
-            <button onClick={() => this.addToInventory()}>PLEASE ADD</button>
-            <button onClick={this.logout}>Log Out</button>
+        <div className="admin-container">
+            <div className="admin-dash">
+                inventory: {mappedInventory}
+                brand<input type="text" onChange={(e) => this.handleChange('brand', e.target.value)}/>
+                style<input type="text" onChange={(e) => this.handleChange('style', e.target.value)}/>
+                name<input type="text" onChange={(e) => this.handleChange('name', e.target.value)}/>
+                price<input type="number" onChange={(e) => this.handleChange('price', e.target.value)}/>
+                image<input type="text" onChange={(e) => this.handleChange('image', e.target.value)}/>
+                details<input type="text" onChange={(e) => this.handleChange('details', e.target.value)}/>
+                quantity<input type="text" onChange={(e) => this.handleChange('quantity', e.target.value)}/>
+                <button onClick={() => this.addToInventory()}>PLEASE ADD</button>
+                <button onClick={this.logout}>Log Out</button>
+            </div>
         </div>
             )
         :

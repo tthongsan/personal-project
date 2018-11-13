@@ -7,4 +7,12 @@
     color: white;
     background-color: rgb(51, 51, 53);
     height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.admin-dash > input {
+    width: 400px;
 }

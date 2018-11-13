@@ -2,6 +2,8 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const massive = require('massive');
 const session = require('express-session');
+const exphbs = require('express-handlebars');
+
 const SC = require('./controller/save_controller');
 const UC = require('./controller/userController');
 const AC = require('./controller/authController');
@@ -14,6 +16,9 @@ const saltRounds = 10;
 
 
 const app = express();
+
+
+
 app.use(bodyParser.json());
 
 app.use( express.static( `${__dirname}/../build` ) );
@@ -28,6 +33,10 @@ massive(process.env.CONNECTION_STRING).then((database) => {
     app.set('db', database);
     console.log('connected')
 })
+
+//////handlebars middleware
+app.engine('handlebars', exphbs({defaultLayout: 'main'}))
+app.set('view engine', 'handlebars');
 
 
 
@@ -92,6 +101,9 @@ app.post('/api/email', UC.sendEmail);
 ///////////////////add to favs //////////////
 app.post('/api/favs', UC.addToFavs);
 
+
+///////////////////stripe//////////////////
+app.post('/api/charge', CC.stripeCharge);
 
 
 

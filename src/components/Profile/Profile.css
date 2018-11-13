@@ -3,6 +3,8 @@
     width: 1200px;
     margin: 0 auto;
     background-color: #fff;
+    display: flex;
+    justify-content: flex-start;
 }
 
 .login-button {
@@ -14,11 +16,12 @@
 
 
 .user-email-box{
-    width: 300px;
-    height: 200px;
+    width: 600px;
+    height: 600px;
     display: flex;
     flex-direction: column;
-
+    justify-content: center;
+    align-items: flex-start;
 }
 
 .user-pic {
@@ -32,5 +35,4 @@
 }
 
 .username {
-
 }

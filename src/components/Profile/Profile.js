@@ -18,11 +18,11 @@ class Profile extends Component {
 
 
 
-componentDidUpdate(prevProps) {
-    if (prevProps !== this.props){
-        this.getTheUser();
-    }
-}
+// componentDidUpdate(prevProps) {
+//     if (prevProps !== this.props){
+//         this.getTheUser();
+//     }
+// }
       
 
 
@@ -100,7 +100,7 @@ componentDidMount() {
                         </div>
                     </div>
                     : <div>
-                        <button className="login-button" onClick={() => this.logIn()}>Login</button>
+                        <button className="login-button" onClick={this.logIn}>Login</button>
                     </div>
             }
         </div>

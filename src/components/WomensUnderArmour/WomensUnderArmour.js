@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 //import './WomensConverse.css';
 //import MensNikeShoes from '../../jsonFile/nikeMensLifeShoes.json';
-import Categories from '../Categories/Categories';
+import WCategories from '../WCategories/WCategories';
 //import Product from '../Product/Product';
 import {Link} from 'react-router-dom';
 import Scroll from '../Scroll/Scroll';
@@ -78,7 +78,7 @@ addToCart = (name, price, image, id) => {
                 
                   <h1>UNDER ARMOUR</h1>
                 <div className="shoeCat-container">
-                  <Categories />
+                  <WCategories />
                   <Scroll>
                     {mappedShoes}
                   </Scroll>
