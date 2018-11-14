@@ -23,15 +23,15 @@ class Navbar extends Component {
           </Link></p>
         </div>
         <div className="navbar-list">
-          <div><NavLink exact to="/mens" activeStyle={{ color: '#fdd947' }} className="nav-links">Men's</NavLink></div>
-          <div><NavLink exact to="/womens" activeStyle={{ color: '#fdd947' }} className="nav-links">Woman's</NavLink></div>
-          <div><NavLink exact to="/about" activeStyle={{ color: '#fdd947' }} className="nav-links">About</NavLink></div>
+          <div><NavLink exact to="/mens" className="nav-links">Men's</NavLink></div>
+          <div><NavLink exact to="/womens" className="nav-links">Woman's</NavLink></div>
+          <div><NavLink exact to="/about" className="nav-links">About</NavLink></div>
             { this.props.user ?
               <div><Link to="/profile" className="profile-nav">Profile</Link></div>
               :
-              <div><NavLink exact to="/profile" activeStyle={{ color: '#fdd947' }} className="nav-links">Login</NavLink></div>
+              <div><NavLink exact to="/profile"  className="nav-links">Login</NavLink></div>
             }
-          <div><NavLink exact to="/cart" activeStyle={{ color: '#fdd947' }} className="nav-links">Shopping Cart</NavLink></div>
+          <div><NavLink exact to="/cart" className="nav-links">Shopping Cart</NavLink></div>
         </div>
         
       </div>

@@ -1,6 +1,6 @@
 .mens-page{
     width: 1200px;
-    height: 160vh;
+    min-height: 180vh;
     margin: 0 auto;
 }
 
@@ -34,6 +34,8 @@
 .mens-page {
     background: #d5d5d3ef
 }
+
+
 
 
 

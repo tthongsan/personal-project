@@ -82,7 +82,7 @@ componentDidMount() {
     return (
         
       <div className="profile-container">
-        <div>
+        <div className="profile">
         {console.log('in profile',this.props.user)}
             <h1>Profile</h1>
             {loading
@@ -90,7 +90,7 @@ componentDidMount() {
                 : error
                     ? <div>There was error loading</div>
                     : user
-                    ? <div className="profile-container">
+                    ? <div className="profile-con">
                         <div className="user-email-box">
                             <div className="username">Name: {user.name}</div>
                             <div className="email">Email: {user.email}</div>

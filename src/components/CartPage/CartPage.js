@@ -51,7 +51,12 @@ onToken = (stripeToken) =>{
       body: stripeToken,
       amount: this.state.total * 100
     }).then(response => {
-      console.log('success', response.data.success)
+      console.log('success', response.data.success);
+      axios.post('/api/sucemail',{
+        body: stripeToken
+      }).then(res => {
+        console.log('email sent', res);
+      })
     })
 }
     

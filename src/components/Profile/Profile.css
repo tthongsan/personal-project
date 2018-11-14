@@ -1,11 +1,23 @@
 .profile-container {
-    height: 100vh;
+    min-height: 100vh;
     width: 1200px;
     margin: 0 auto;
-    background-color: #fff;
     display: flex;
     justify-content: flex-start;
 }
+
+.profile-con{
+
+    display: flex;
+    justify-content: flex-start;
+ 
+}
+
+.profile{
+    background-color: #fff;
+    width: 1200px;
+}
+
 
 .login-button {
     height: 80px;

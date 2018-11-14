@@ -98,12 +98,14 @@ app.delete('/api/cart/:id', (req, res) => {
 app.post('/api/email', UC.sendEmail);
 
 
+
 ///////////////////add to favs //////////////
 app.post('/api/favs', UC.addToFavs);
 
 
 ///////////////////stripe//////////////////
 app.post('/api/charge', CC.stripeCharge);
+app.post('/api/sucemail', CC.sendEmail);
 
 
 
