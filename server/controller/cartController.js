@@ -31,6 +31,7 @@ module.exports = {
             currency: 'usd',
             description: 'Example charge',
             source: stripeToken.id,
+
           }, function(err, charge){
               console.log('charge--------------------------------------', charge)
             if(err){
@@ -41,7 +42,7 @@ module.exports = {
           } else {
             res.send({
                 success: true,
-                message: 'sucess'
+                message: 'success'
             })
           }
           }).then(() => {

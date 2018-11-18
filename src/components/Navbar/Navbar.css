@@ -63,5 +63,56 @@
 
 
 @media (min-width: 350px) and (max-width: 376px){
-    
+    .navbar-container {
+        max-width: 100%;
+        margin: 0 auto;
+    }
+
+    .logo-title{
+        font-weight: 300;
+        text-decoration: none;
+        color: #fdd947;
+        font-size: 70px;
+        letter-spacing: 2px;
+        text-shadow: 5px 5px 10px #000;
+    }
+
+    .profile-nav {
+        color: white;
+        text-decoration: none;
+    }
+
+    .navbar {
+        min-height: 30vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        margin: 0 auto;
+        background-color: #00000070;
+    }
+
+
+    .navbar-list {
+        display: none;
+    }
+
+    .nav-links {
+        color: #ffffff;
+        text-decoration: none;
+    }
+
+    .nav-links:hover {
+        text-decoration: underline;
+    }
+
+
+    .nav-input {
+        height: 30px;
+    }
+
+
+    .fa-globe{
+        font-size: 150px;
+    }
 }

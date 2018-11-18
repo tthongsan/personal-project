@@ -40,16 +40,45 @@
 
 
 @media (min-width: 350px) and (max-width: 376px){
+    .mens-page{
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .mens-title{
+        margin-top: 0;
+        font-weight: 400;
+        background: #d5d5d300;
+        font-size: 75px;
+    
+    }
+    
+    .mens-links{
+        display: flex;
+        height: 1000px;
+        flex-direction: column;
+        justify-content: space-evenly;
+        color: #fdd947;
+    }
+    
+    .mens-nav{
+        font-size: 80px;
+        font-weight: 300;
+        letter-spacing: 2px;
+        color: #252525; 
+        text-decoration: none;
+    }
+    
+    .mens-nav:hover {
+        text-decoration: underline;
+    }
+    
+    
     .mens-page {
-        width: 375px;
-    }
+        background: #d5d5d3ef;
 
-    .mens-links {
-        width: 375px;
-    }
-
-    .mens-nav {
-        font-size: 10px;
-        width: 375px;
     }
 }

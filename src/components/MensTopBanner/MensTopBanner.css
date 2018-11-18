@@ -87,19 +87,71 @@
   }
 
   @media (min-width: 350px) and (max-width: 376px){
-    .overall-container{
-      width: 375px;
+    .overall-container {
+      width: 377px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+  }
+  
+  .banner-container {
+      display: none;
     }
-
-    .banner-container{
-      width: 375px;
+  
+    .shoes-big-box {
+      display: flex;
+      flex-wrap: wrap;
+      margin: 0 auto;
+      justify-content: center;
     }
-
-    .banner-img {
-      width: 375px;
-    }
-
+    
     .banner-overlay {
-      width: 375px;
+      display: none;
     }
+    
+    .banner-container:hover .banner-overlay {
+      display: block;
+      background: rgba(0, 0, 0, .6);
+    }
+    
+    .banner-img {
+      position: absolute;
+      width: 500px;
+      height: 300px;
+      left: 0;
+    }
+    
+    .banner-title {
+      display: none;
+    }
+    
+    .banner-container:hover .banner-title {
+      top: 110px;
+      color: #fdd947;
+    }
+    
+    .banner-button {
+      position: absolute;
+      width: 600px;
+      left:-40px;
+      top: 152.5px;
+      text-align: center;
+      opacity: 0;
+      transition: opacity .35s ease;
+    }
+    
+    .banner-button a{
+      width: 200px;
+      padding: 12px 48px;
+      text-align: center;
+      color: #fdd947;
+      border: solid 2px #fdd947;
+      z-index: 1;
+      text-decoration: none;
+    }
+    
+    .banner-container:hover .banner-button {
+      opacity: 1;
+    }
+
   }

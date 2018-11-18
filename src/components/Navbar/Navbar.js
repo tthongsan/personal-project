@@ -5,8 +5,20 @@ import {updateLoggin} from '../../ducks/reducer';
 import {connect} from 'react-redux';
 
 class Navbar extends Component {
+  constructor(){
+    super();
+      this.state = {
+        toggleNav: false
+    }
+  }
 
-
+toggle = () => {
+    this.setState((prevState) => {
+        return {
+            toggleNav: !prevState.toggleNav
+        }
+    })
+}
 
 
 
@@ -18,7 +30,7 @@ class Navbar extends Component {
     <div className="navbar-container">
       <div className="navbar">
         <div>
-          <p ><Link to="/" className="logo-title">
+          <p onClick={this.toggle}><Link to="/" className="logo-title">
           <i class="fa fa-globe" aria-hidden="true"></i>
           </Link></p>
         </div>
