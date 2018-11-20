@@ -84,7 +84,7 @@ componentDidMount() {
       <div className="profile-container">
         <div className="profile">
         {console.log('in profile',this.props.user)}
-            <h1>Profile</h1>
+            <h1 className="profile-head">Profile</h1>
             {loading
                 ? <div>Loading . . . </div>
                 : error
@@ -92,11 +92,13 @@ componentDidMount() {
                     : user
                     ? <div className="profile-con">
                         <div className="user-email-box">
-                            <div className="username">Name: {user.name}</div>
-                            <div className="email">Email: {user.email}</div>
-                            <div><input type="text" onChange={(e) => this.handleNameChange(e.target.value)}/></div><button onClick={() => this.editName(user.id)}>change name</button>
-                            <img className="user-pic" src={user.picture} alt=""/>
-                            <button onClick={() => this.logOut()}><Link to="/">Log out</Link></button>
+                            <div className="email-con"> 
+                                <div className="username">Name: {user.name}</div>
+                                <div className="email">Email: {user.email}</div>
+                                <div>Change display name:<input type="text" onChange={(e) => this.handleNameChange(e.target.value)}/></div><button onClick={() => this.editName(user.id)}>change name</button>
+                                <img className="user-pic" src={user.picture} alt=""/>
+                            </div>
+                            <button className="logoutbtn" onClick={() => this.logOut()}><Link to="/">Log out</Link></button>
                         </div>
                     </div>
                     : <div>

@@ -13,19 +13,19 @@ class About extends Component {
     let weatherDesc = this.props.data.weather[0].main
 
     return (
-      <div className="about-container">
-        <div className="img-overlay">
-          <img className="about-img" src="https://ihg.scene7.com/is/image/ihg/Kimpton-Sacramento-hero" alt="city"/>
-          <div class="text-block"> 
-            <p>XXXX Layton Dr</p>
-            <p>North Highlands, CA 95660</p>
-              <div className="temps">
-                <p>{Math.floor(weatherTemp)} F</p>
-                <img src={`http://openweathermap.org/img/w/${weatherIcon}.png`} alt=""/>
-                <p>{weatherDesc}</p>
+      <div className="big-div">
+        <div  className="about-container">
+            <img className="about-img" src="https://ihg.scene7.com/is/image/ihg/Kimpton-Sacramento-hero" alt="city"/>
+            <div class="text-block"> 
+              <p>XXXX Layton Dr</p>
+              <p>North Highlands, CA 95660</p>
+                <div className="temps">
+                  <p>{Math.floor(weatherTemp)} F</p>
+                  <img src={`http://openweathermap.org/img/w/${weatherIcon}.png`} alt=""/>
+                  <p>{weatherDesc}</p>
+              </div>
             </div>
           </div>
-        </div>
       </div>
     )
   }

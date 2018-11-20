@@ -7,38 +7,58 @@
 }
 
 .profile-con{
-
     display: flex;
-    justify-content: flex-start;
- 
+    background: rgba(180, 180, 180, 0.918);
+    width: 600px;
+    margin: 0 auto;
+    margin-bottom: 100px;
 }
 
 .profile{
-    background-color: #fff;
+    background-color: rgba(255, 255, 255, 0);
     width: 1200px;
 }
 
 
 .login-button {
-    height: 80px;
-    width: 200px;
-    font-size: 35px;
-    background-color: gold;
+    margin-top: 150px;
+    height: 50px;
+    width: 150px;
+    font-size: 20px;
+    text-transform: uppercase;
+    border: none;
+    color: #fff;
+    text-shadow: 1px 1px black;
+    background: radial-gradient(ellipse farthest-corner at right bottom, #FEDB37 0%, #FDB931 8%, #9f7928 30%, #8A6E2F 40%, transparent 80%),
+                radial-gradient(ellipse farthest-corner at left top, #FFFFFF 0%, #FFFFAC 8%, #D1B464 25%, #5d4a1f 62.5%, #5d4a1f 100%);
+}
+
+.profile-head{
+    color: #fff;
 }
 
 
+
 .user-email-box{
+    margin: 0 auto;
     width: 600px;
     height: 600px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-around;
     align-items: flex-start;
 }
+
+
 
 .user-pic {
     width: 200px;
     height: 200px;
+    border-radius: 50%;
+}
+
+.logoutbtn{
+    margin: 0 auto;
 }
 
 .profile-container{
@@ -46,5 +66,13 @@
     justify-content: space-around;
 }
 
-.username {
+.email-con{
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 400px;
+    height: 400px;
+    box-shadow: 5px 5px 25px rgba(0, 0, 0, 0.452);
 }

@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import './Products.css';
+import {connect} from 'react-redux';
 import axios from 'axios';
 
 
@@ -18,6 +19,7 @@ class Product extends Component{
     console.log('sent shoes to product page',this.props.match)
     console.log('sent object to product page', this.props.location.state.shoe)
     const {shoe} = this.props.location.state;
+    const {user} = this.props
   return (
     
     <div className="item-detail">
@@ -28,7 +30,14 @@ class Product extends Component{
         <div className="item-desc">
           <p className="product-title">{shoe.name}</p>
           <p className="product-price">${shoe.price}</p>
-          <button className="product-btn" onClick={() => this.addToCart(shoe.name, shoe.price, shoe.image, shoe.id)}>Add to cart</button>
+          <button className="product-btn" onClick={() => {
+            user
+            ?
+              this.addToCart(shoe.name, shoe.price, shoe.image, shoe.id)
+            :
+              alert('please log in to add to cart')
+          }}>
+          Add to cart</button>
         </div>
   
       </div>
@@ -41,7 +50,12 @@ class Product extends Component{
   }
 }
 
-export default Product;
+function mapStateToProps (state) {
+  const {user} = state;
+  return {user};
+}
+
+export default connect(mapStateToProps)(Product);;
 
 
 // <button

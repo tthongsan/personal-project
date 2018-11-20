@@ -113,15 +113,16 @@ register = () => {
             ?
             (
         <div className="admin-container">
-            <div className="admin-dash">
-                inventory: {mappedInventory}
-                brand<input type="text" onChange={(e) => this.handleChange('brand', e.target.value)}/>
-                style<input type="text" onChange={(e) => this.handleChange('style', e.target.value)}/>
-                name<input type="text" onChange={(e) => this.handleChange('name', e.target.value)}/>
-                price<input type="number" onChange={(e) => this.handleChange('price', e.target.value)}/>
-                image<input type="text" onChange={(e) => this.handleChange('image', e.target.value)}/>
-                details<input type="text" onChange={(e) => this.handleChange('details', e.target.value)}/>
-                quantity<input type="text" onChange={(e) => this.handleChange('quantity', e.target.value)}/>
+                <div className="invbox">inventory: {mappedInventory}</div>
+            <div className="admin-control">
+                
+                <div>brand <input type="text" onChange={(e) => this.handleChange('brand', e.target.value)}/></div>
+                <div>style <input type="text" onChange={(e) => this.handleChange('style', e.target.value)}/></div>
+                <div>name<input type="text" onChange={(e) => this.handleChange('name', e.target.value)}/></div>
+                <div>price<input type="number" onChange={(e) => this.handleChange('price', e.target.value)}/></div>
+                <div>image<input type="text" onChange={(e) => this.handleChange('image', e.target.value)}/></div>
+                <div>details<input type="text" onChange={(e) => this.handleChange('details', e.target.value)}/></div>
+                <div>quantity<input type="text" onChange={(e) => this.handleChange('quantity', e.target.value)}/></div>
                 <button onClick={() => this.addToInventory()}>PLEASE ADD</button>
                 <button onClick={this.logout}>Log Out</button>
             </div>
@@ -129,7 +130,7 @@ register = () => {
             )
         :
         <div className="admin-dash">
-            admin only
+            <div className="admin">admin only</div>
             <div className="admin-dash">
                 username:<input type="text" onChange={(e) => this.handleChange('username', e.target.value)}/>
                 password:<input type="password" onChange={(e) => this.handleChange('password', e.target.value)}/>

@@ -1,19 +1,35 @@
 //////////color/////////
 $background-white: rgba(255, 255, 255, 0.952);
+$golden-text: #fdd947;
 
-.about-container {
+
+.big-div {
+    background: $background-white;
     margin: 0 auto;
     width: 1200px;
-    min-height: 100vh;
+    height: 800px;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    background: $background-white;
+
+    .about-container {
+        margin: 0 auto;
+        width: 1200px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    
 
     .about-img {
         width: 1000px;
         min-height: 600px;
         position: relative;
+        margin-bottom: 30px;
+    }
+
+    .text-block{
+        margin: 0 auto;
+        width: 350px;
     }
 
     .temps{
@@ -23,8 +39,8 @@ $background-white: rgba(255, 255, 255, 0.952);
         justify-content: space-between;
         align-items: center;
     }
-}
 
+}
 
 
 

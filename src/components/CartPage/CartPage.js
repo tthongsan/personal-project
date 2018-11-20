@@ -66,7 +66,7 @@ onToken = (stripeToken) =>{
 
   render() {
     console.log('cart',this.state.cart)
-
+    const {user} = this.props;
     
     
 
@@ -77,7 +77,7 @@ onToken = (stripeToken) =>{
           <h1 className="sando">SHOPPING CART</h1>
           <CartScroll>
           {
-          this.props.loggedIn !== false || this.state.cart.length !== 0
+            user
           ? 
              this.state.cart.map(item => {
               return <div className="each-item">
@@ -126,17 +126,20 @@ onToken = (stripeToken) =>{
         </div>
   
       </div>
-       
       </div>
     )
   }
 }
 
 const mapStateToProps = (state) => {
-  const {loggedIn} = state;
-  return loggedIn
+  const {loggedIn, user} = state;
+  return {
+    loggedIn,
+    user
+  }
 }
 
 export default connect(mapStateToProps, {updateLoggin})(CartPage);
 
 
+//this.props.loggedIn !== false || this.state.cart.length !== 0
