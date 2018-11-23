@@ -1,42 +1,42 @@
+import React, { Component } from 'react';
+import {Link} from 'react-router-dom';
+import './Checkout.scss';
 
-// import React from 'react'
-// import axios from 'axios';
-// import StripeCheckout from 'react-stripe-checkout';
+class Checkout extends Component {
+  render() {
+     let checkoutMap = this.props.location.state.item.map(item => {
+         return <div className="items-check">
+            
+            <img className="items-check-img" src={item.image} alt=""/>
+            <p>{item.name}</p>
+         </div>
+     })
+     console.log(this.props.location.passThis.token)
+     console.log(this.props.location.passThis.token.card)
+     console.log(this.props.location.passThis.token.card.address_line1)
+     const {card} = this.props.location.passThis.token
 
-// //import STRIPE_PUBLISHABLE from './constants/stripe';
-// //import PAYMENT_SERVER_URL from './constants/server';
 
-// const CURRENCY = 'EUR';
+    return (
+      <div className="checkout-container">
+        <h1 className="check-title">THANK YOU FOR YOUR PURCHASE</h1>
+        <div className="mapped-container">
 
-// const fromEuroToCent = amount => amount * 100;
+           <div className="mapped-checkout"> {checkoutMap}</div>
+            
 
-// const successPayment = data => {
-//   alert('Payment Successful');
-// };
+            <div className="addressbox">
+              <p>ships to</p>
+              <p>{card.address_line1}</p>
+              <p>{card.address_city}</p>
+              <p>{card.address_state}</p>
+              <p>{card.address_zip}</p>
+            </div>
+        </div>
+        <Link to="/">return home</Link>
+      </div>
+    )
+  }
+}
 
-// const errorPayment = data => {
-//   alert('Payment Error');
-// };
-
-// const onToken = (amount, description) => token =>
-//   axios.post(PAYMENT_SERVER_URL,
-//     {
-//       description,
-//       source: token.id,
-//       currency: CURRENCY,
-//       amount: fromEuroToCent(amount)
-//     })
-//     .then(successPayment)
-//     .catch(errorPayment);
-
-// const Checkout = ({ name, description, amount }) =>
-//   <StripeCheckout
-//     name={name}
-//     description={description}
-//     amount={fromEuroToCent(amount)}
-//     token={onToken(amount, description)}
-//     currency={CURRENCY}
-//     stripeKey={STRIPE_PUBLISHABLE}
-//   />
-
-// export default Checkout;
+export default Checkout;

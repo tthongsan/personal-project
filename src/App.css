@@ -4,12 +4,13 @@
   text-align: center;
   font-family: 'Lato', sans-serif;
   text-transform: uppercase;
+  background: #3d3d3d;
+  max-height: 100%;
   background-image: url("http://ksuradio.com/wp-content/uploads/2017/09/Header-2.jpg"), linear-gradient(#13040e, #000000);
 
   background-repeat:no-repeat;
 
   background-size: cover;
-  max-height: 100%;
 }
 
 @media (min-width: 350px) and (max-width: 376px){
@@ -17,3 +18,5 @@
     width: 1200px;
   }
 }
+
+

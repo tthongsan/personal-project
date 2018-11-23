@@ -1,6 +1,5 @@
 
 .footer-container{
-  margin-top: 20px;
   display: flex;
   flex-direction: column;
 }
@@ -57,19 +56,19 @@
   }
 
   .social-media .fa.fa-twitter:hover{
-    background:#55acee;
-    color:#fff;
+    /* background:#55acee;
+    color:#fff; */
    
   }
   
   .social-media .fa.fa-facebook:hover{
-    background:#3b5998;
-    color:#fff;
+    /* background:#3b5998;
+    color:#fff; */
   }
 
   .social-media .fa.fa-instagram:hover{
-    background:#6a453b;
-    color:#fff;
+    /* background:#6a453b; */
+    /* color:#fff; */
   }
 
   .payment {

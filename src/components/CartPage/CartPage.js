@@ -3,7 +3,7 @@ import axios from 'axios';
 import './CartPage.css';
 import {connect} from 'react-redux';
 import {updateLoggin} from '../../ducks/reducer';
-import {Link} from 'react-router-dom';
+import {Link, withRouter} from 'react-router-dom';
 import StripeCheckout from 'react-stripe-checkout';
 import CartScroll from '../CartScroll/CartScroll';
 
@@ -57,6 +57,12 @@ onToken = (stripeToken) =>{
       }).then(res => {
         console.log('email sent', res);
       })
+      console.log('proprorporpror', this.props)
+      this.props.history.push({
+        pathname: '/checkout',
+        state: {item:this.state.cart},
+        passThis: {token:stripeToken}
+      })
     })
 }
     
@@ -68,9 +74,6 @@ onToken = (stripeToken) =>{
     console.log('cart',this.state.cart)
     const {user} = this.props;
     
-    
-
-
     return (
       <div className="cart-container">
         <div className="title-cart">
@@ -114,11 +117,12 @@ onToken = (stripeToken) =>{
         { this.state.cart.length !== 0
           ?
             <div>
-            <StripeCheckout
-              stripeKey="pk_test_XojTq40wHrmEQPG7ytIBiaRo"
-              token={this.onToken}
-            />
-            
+              <StripeCheckout
+                stripeKey="pk_test_XojTq40wHrmEQPG7ytIBiaRo"
+                token={this.onToken}
+                amount={this.state.total * 100}
+                billingAddress={true}
+              />
                    </div>   
             :
             <div>add items to cart</div>

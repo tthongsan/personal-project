@@ -5,6 +5,7 @@ import Categories from '../Categories/Categories';
 //import Product from '../Product/Product';
 import {Link} from 'react-router-dom';
 import Scroll from '../Scroll/Scroll';
+import {connect} from 'react-redux';
 import axios from 'axios';
 
 class MensNewBalance extends Component {
@@ -47,7 +48,7 @@ addToCart = (name, price, image, id) => {
 
 
   render() {
-    //console.log('this.state.nikeshoes', this.state.nikeShoes)
+    const {user} = this.props    //console.log('this.state.nikeshoes', this.state.nikeShoes)
       //console.log('hit rennderrrrr')
  let mappedShoes = this.state.newbalance && this.state.newbalance.map(shoe => {
    return <div className="eachShoe" key={shoe.id}>
@@ -61,10 +62,15 @@ addToCart = (name, price, image, id) => {
         <p>${shoe.price}</p>
       </div>
       <div>
-        <button onClick={() => this.addToCart(shoe.name, shoe.price, shoe.image, shoe.id)}>
- 
-          Add to cart
-        </button>
+      <button className="product-btn" onClick={() => {
+        user
+        ?
+          this.addToCart(shoe.name, shoe.price, shoe.image, shoe.id)
+        :
+          alert('please log in to add to cart')
+      }}>
+        Add to cart
+      </button>
       </div>
       <div><i className="far fa-heart icon"></i></div> 
     </div>
@@ -91,4 +97,9 @@ addToCart = (name, price, image, id) => {
   }
 }
 
-export default MensNewBalance;
+function mapStateToProps (state) {
+  const {user} = state;
+  return {user};
+}
+
+export default connect(mapStateToProps)(MensNewBalance);

@@ -54,7 +54,7 @@ getVans() {
              <h3>{shoe.brand}</h3>
              <p>${shoe.price}</p>
            </div>
-           <div><button onClick={() => {
+           <div><button  className="product-btn" onClick={() => {
             user
             ?
               this.addToCart(shoe.name, shoe.price, shoe.image, shoe.id)

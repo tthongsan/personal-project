@@ -64,6 +64,7 @@
 .profile-container{
     display: flex;
     justify-content: space-around;
+    background: #000;
 }
 
 .email-con{

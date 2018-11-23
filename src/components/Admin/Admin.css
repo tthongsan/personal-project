@@ -1,6 +1,6 @@
 .inventory-list {
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
     margin: 4px;
  
 }
@@ -10,6 +10,7 @@
     height: 650px;
     display: flex;
     justify-content: center;
+    background: black;
 }
 
 .admin-dash{

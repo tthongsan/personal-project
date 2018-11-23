@@ -26,7 +26,7 @@ h1 {
 
 
 .eachShoe {
-    margin: 10px;
+    margin: 15px;
     height: 300px;
     width: 300px;
     display: flex;
@@ -62,6 +62,7 @@ h1 {
     justify-content: space-between;
     align-items: flex-end;
 }
+
 
 
 .modal {
@@ -130,9 +131,9 @@ h1 {
 }
 
 .icon:hover {
-    color: red;
+    /* color: red;
     background: #fdd947;
-    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.493);
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.493); */
 
 }
 

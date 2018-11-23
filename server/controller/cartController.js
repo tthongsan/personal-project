@@ -32,18 +32,20 @@ module.exports = {
             description: 'Example charge',
             source: stripeToken.id,
 
-          }, function(err, charge){
+          }
+          , function(err, charge){
               console.log('charge--------------------------------------', charge)
             if(err){
                 res.send({
                     success: false,
-                    message: 'error'
+                    message: 'error',
                 })
           } else {
             res.send({
                 success: true,
                 message: 'success'
             })
+            
           }
           }).then(() => {
               console.log("this is the bodybodyidname---++++++++++",req.body.body.card.name);
@@ -61,7 +63,7 @@ module.exports = {
 
            const mailOptions = {
             from: process.env.X, // sender address
-            to: req.body.body.card.name, // list of receivers
+            to: req.body.body.email, // list of receivers
             subject: 'LETS GOOOOOOOOOOOOOOOOOOOOO', // Subject line
             html: '<p>PAYMENT WORKKKKKEEDDD DUDUUDUDUDE</p>'// plain text body
           }

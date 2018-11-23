@@ -59,11 +59,13 @@ addToCart = (name, price, image, id) => {
     <div className="plus-heart">
       <div className="shoe-desc">
         <h4>{shoe.name}</h4>
-        <h3>{shoe.brand}</h3>
+        <h3>Under Armour</h3>
         <p>${shoe.price}</p>
       </div>
       <div>
-        <button onClick={() => {
+        <button 
+          className="product-btn"
+          onClick={() => {
           user
           ?
             this.addToCart(shoe.name, shoe.price, shoe.image, shoe.id)

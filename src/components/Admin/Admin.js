@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import ScrollXX from '../ScrollXX/ScrollXX';
 import './Admin.css';
 
  class Admin extends Component {
@@ -113,7 +114,7 @@ register = () => {
             ?
             (
         <div className="admin-container">
-                <div className="invbox">inventory: {mappedInventory}</div>
+                <div className="invbox"> <ScrollXX>inventory:{mappedInventory}</ScrollXX></div>
             <div className="admin-control">
                 
                 <div>brand <input type="text" onChange={(e) => this.handleChange('brand', e.target.value)}/></div>

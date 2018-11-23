@@ -63,7 +63,7 @@ addToCart = (name, price, image, id) => {
         <p>${shoe.price}</p>
       </div>
       <div>
-        <button onClick={() => {
+        <button className="product-btn" onClick={() => {
           user
           ?
             this.addToCart(shoe.name, shoe.price, shoe.image, shoe.id)
