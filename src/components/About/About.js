@@ -17,7 +17,7 @@ class About extends Component {
         <div  className="about-container">
             <img className="about-img" src="https://ihg.scene7.com/is/image/ihg/Kimpton-Sacramento-hero" alt="city"/>
             <div class="text-block"> 
-              <p>XXXX Layton Dr</p>
+              <p>2324 Layton Dr</p>
               <p>North Highlands, CA 95660</p>
                 <div className="temps">
                   <p>{Math.floor(weatherTemp)} F</p>

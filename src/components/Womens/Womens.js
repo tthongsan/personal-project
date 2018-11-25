@@ -7,7 +7,7 @@ import {NavLink} from 'react-router-dom';
 const Womens = () => {
   return (
     <div className="mens-page">
-    <h1 className="mens-title">Womens</h1>
+    <h1 className="mens-title">Women</h1>
     <ul className="mens-links">
       <li><NavLink className="mens-nav" to="/wnike">Nike</NavLink></li>
       <li><NavLink  className="mens-nav" to="/wadidas">Adidas</NavLink></li>

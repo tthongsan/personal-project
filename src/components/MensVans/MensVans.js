@@ -39,6 +39,15 @@ getVans() {
   })
 }
 
+addToCart = (name, price, image, id) => {
+  axios.post('/api/cart', {name:name, price:price, image:image, id:id}).then(res => {
+    console.log('added to cart', res)
+  })
+}
+
+
+
+
   render() {
     const { user } = this.props;
     //console.log('this.state.nikeshoes', this.state.nikeShoes)
@@ -54,15 +63,17 @@ getVans() {
              <h3>{shoe.brand}</h3>
              <p>${shoe.price}</p>
            </div>
-           <div><button  className="product-btn" onClick={() => {
-            user
-            ?
-              this.addToCart(shoe.name, shoe.price, shoe.image, shoe.id)
-            :
-              alert('please log in to add to cart')
-            }}>
-            Add to cart
-            </button></div>
+           <div>
+              <button  className="product-btn" onClick={() => {
+              user
+              ?
+                this.addToCart(shoe.name, shoe.price, shoe.image, shoe.id)
+              :
+                alert('please log in to add to cart')
+              }}>
+              Add to cart
+              </button>
+            </div>
            <div><i className="far fa-heart icon"></i></div>
          </div>
         </div>

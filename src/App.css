@@ -6,11 +6,8 @@
   text-transform: uppercase;
   background: #3d3d3d;
   max-height: 100%;
-  background-image: url("http://ksuradio.com/wp-content/uploads/2017/09/Header-2.jpg"), linear-gradient(#13040e, #000000);
-
-  background-repeat:no-repeat;
-
-  background-size: cover;
+  background: rgb(187, 25, 25) radial-gradient(rgb(196, 183, 221), rgba(53, 71, 109, 0.959));
+  
 }
 
 @media (min-width: 350px) and (max-width: 376px){
@@ -19,4 +16,9 @@
   }
 }
 
+/* background-image: url("http://ksuradio.com/wp-content/uploads/2017/09/Header-2.jpg"), linear-gradient(#13040e, #000000);
+
+  background-repeat:no-repeat;
+
+  background-size: cover; */
 

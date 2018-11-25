@@ -35,8 +35,8 @@ toggle = () => {
           </Link></p>
         </div>
         <div className="navbar-list">
-          <div><NavLink exact to="/mens" className="nav-links">Men's</NavLink></div>
-          <div><NavLink exact to="/womens" className="nav-links">Woman's</NavLink></div>
+          <div><NavLink exact to="/mens" className="nav-links">Men</NavLink></div>
+          <div><NavLink exact to="/womens" className="nav-links">Women</NavLink></div>
           <div><NavLink exact to="/about" className="nav-links">About</NavLink></div>
             { this.props.user ?
               <div><Link to="/profile" className="profile-nav">Profile</Link></div>

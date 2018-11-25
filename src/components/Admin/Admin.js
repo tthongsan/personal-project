@@ -52,7 +52,7 @@ deleteItemsInInventory = (id) => {
 
 
 handleChange = (key, value) => {
-    console.log({[key]: value})
+    //console.log({[key]: value})
     this.setState({
         [key]: value
     })
@@ -114,7 +114,7 @@ register = () => {
             ?
             (
         <div className="admin-container">
-                <div className="invbox"> <ScrollXX>inventory:{mappedInventory}</ScrollXX></div>
+                <div className="invbox"><ScrollXX>{mappedInventory}</ScrollXX></div>
             <div className="admin-control">
                 
                 <div>brand <input type="text" onChange={(e) => this.handleChange('brand', e.target.value)}/></div>
